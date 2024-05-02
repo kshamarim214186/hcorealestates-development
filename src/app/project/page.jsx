@@ -1,4 +1,6 @@
 "use client";
+import React from 'react';
+import { Suspense } from 'react'
 import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -44,8 +46,10 @@ export default async function Project() {
             <Breadcrumb className={styles.bredcurmb}>
                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                <Breadcrumb.Item active>Projects</Breadcrumb.Item>
-            </Breadcrumb>            
-            <PropertiesListing develop={developers} pageName={pageName} pageData={result.pagedata} />
+            </Breadcrumb> 
+            <Suspense fallback={<LoadingCustom />}>           
+               <PropertiesListing develop={developers} pageName={pageName} pageData={result.pagedata} />
+            </Suspense> 
             <div className="row">
                <div className="col-lg-12">
                   <div className={styles.overview}>
