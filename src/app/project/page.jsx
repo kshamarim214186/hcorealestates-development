@@ -5,12 +5,11 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import LoadingCustom from '@/app/components/loading-custom';
 import Accordion from "react-bootstrap/Accordion";
 import styles from "@/app/scss/properties.module.scss";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
-
-import PropertiesListing from "../AllPages/PropertiesListing";
+import PropertiesListing from "@/app/AllPages/PropertiesListing";
 
 export default async function Project() {
 
@@ -43,6 +42,10 @@ export default async function Project() {
             <title>{pageData.proplistseotitle}</title>
             <meta name="description" content={pageData.proplistseodesc} />
             <link rel="canonical" href={canonicalUrl} />
+            <Breadcrumb className={styles.bredcurmb}>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Projects</Breadcrumb.Item>
+            </Breadcrumb>
             
          </main>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
