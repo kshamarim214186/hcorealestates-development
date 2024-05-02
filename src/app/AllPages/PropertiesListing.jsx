@@ -1,4 +1,3 @@
-"use client";
 import { useSearchParams } from 'next/navigation'
 import { NextSeo } from "next-seo";
 import Image from "next/image";
