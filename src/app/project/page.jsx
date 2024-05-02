@@ -1,5 +1,4 @@
 "use client";
-import { Suspense } from 'react'
 import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -43,10 +42,25 @@ export default async function Project() {
             <meta name="description" content={pageData.proplistseodesc} />
             <link rel="canonical" href={canonicalUrl} />
             <Breadcrumb className={styles.bredcurmb}>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item active>Projects</Breadcrumb.Item>
+               <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+               <Breadcrumb.Item active>Projects</Breadcrumb.Item>
             </Breadcrumb>
             
+
+            <div className="row">
+               <div className="col-lg-12">
+                  <div className={styles.overview}>
+                     <h1>{pageData.proplisth1}</h1>
+                     <p>{pageData.proplistshortdesc}</p>
+                     <Accordion defaultActiveKey="0">
+                        <Accordion.Item eventKey="1">
+                           <Accordion.Body>{pageData.proplistfulldesc}</Accordion.Body>
+                           <Accordion.Header as={"div"}></Accordion.Header>
+                        </Accordion.Item>
+                     </Accordion>
+                  </div>
+               </div>
+            </div>
          </main>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
