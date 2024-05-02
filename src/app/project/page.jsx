@@ -1,30 +1,18 @@
 "use client";
 import { Suspense } from 'react'
-import React, { useContext } from 'react';
-import { useSearchParams } from 'next/navigation'
 import Link from "next/link";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
 import LoadingCustom from '@/app/components/loading-custom';
-import Filter from "@/app/components/Filter";
-import ProjectByListing from "@/app/components/ProjectByListing";
 import Accordion from "react-bootstrap/Accordion";
 import styles from "@/app/scss/properties.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import SortFilter from "@/app/UI/sort-filter";
+
+import PropertiesListing from "../AllPages/PropertiesListing";
 
 export default async function Project() {
-   const searchParams = useSearchParams();
-   const page = searchParams.get('page') ? searchParams.get('page') : "";
-   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
-   const sort = searchParams.get('sort') ? searchParams.get('sort') : "";
-   const getDev = searchParams.get('dev') ? searchParams.get('dev') : "";
-   const getBed = searchParams.get('bed') ? searchParams.get('bed') : "";
-   const getPType = searchParams.get('propertytype') ? searchParams.get('propertytype') : "";
-   const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
-   const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
 
 
    const props = getHomeCompleteData();
@@ -55,26 +43,7 @@ export default async function Project() {
             <title>{pageData.proplistseotitle}</title>
             <meta name="description" content={pageData.proplistseodesc} />
             <link rel="canonical" href={canonicalUrl} />
-            <Breadcrumb className={styles.bredcurmb}>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item active>Properties</Breadcrumb.Item>
-            </Breadcrumb>
             
-
-            <div className="row">
-               <div className="col-lg-12">
-                  <div className={styles.overview}>
-                     <h1>{pageData.proplisth1}</h1>
-                     <p>{pageData.proplistshortdesc}</p>
-                     <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="1">
-                           <Accordion.Body>{pageData.proplistfulldesc}</Accordion.Body>
-                           <Accordion.Header as={"div"}></Accordion.Header>
-                        </Accordion.Item>
-                     </Accordion>
-                  </div>
-               </div>
-            </div>
          </main>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
