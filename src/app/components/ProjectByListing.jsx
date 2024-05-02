@@ -56,7 +56,7 @@ export default function ProjectByListing({ page, pageName, currentpage, sortObj,
             </div>
             {properties.map(function (property) {
              return (
-               <ListItems itemObj={property} key={property.propId} />
+               <ListItems itemObj={property} key={property.id} />
              );
             })}
             {message == 'success' &&
