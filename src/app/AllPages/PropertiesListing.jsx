@@ -20,7 +20,7 @@ import ListItems from "../UI/ListItems";
 import CustomPagination from "@/app/components/CustomPagination";
 
 
-export default function PropertiesListing({ developers, pageName, pageData }) {
+export default function PropertiesListing({ develop, pageName, pageData }) {
 
    const searchParams = useSearchParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
@@ -31,17 +31,12 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
    const getPType = searchParams.get('propertytype') ? searchParams.get('propertytype') : "";
    const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
-
-   
-   
-   const column = 'properties';
-   const canonicalUrl = pageData.homeurl+pageName;
    return (
       <>
          <div className="row">
             <div className="col-lg-4 sticky-top">
                <div className={`${styles.container__left}`}>                    
-                  <Filter developer={developers} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
+                  <Filter developer={develop} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
                </div>
             </div>
             <div className="col-lg-8">

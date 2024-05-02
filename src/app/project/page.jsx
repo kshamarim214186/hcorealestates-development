@@ -44,9 +44,8 @@ export default async function Project() {
             <Breadcrumb className={styles.bredcurmb}>
                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                <Breadcrumb.Item active>Projects</Breadcrumb.Item>
-            </Breadcrumb>
-            
-
+            </Breadcrumb>            
+            <PropertiesListing develop={developers} pageName={pageName} pageData={result.pagedata} />
             <div className="row">
                <div className="col-lg-12">
                   <div className={styles.overview}>
