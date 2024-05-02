@@ -1,0 +1,114 @@
+@import "./common/variables";
+@import "./common/mixins";
+
+.bg {
+  background-color: rgba($primary, 0.1);
+  padding: var(--common-space) 0 6rem;
+  .para {
+    font-size: 1.2rem;
+  }
+}
+.info {
+  text-align: center;
+  padding: 8vh 0 4vh;
+  h1 {
+    small {
+      display: block;
+      color: rgba($black, 0.6);
+    }
+  }
+}
+.contact {
+  position: relative;
+  z-index: 1;
+  margin-top: -6rem;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    a {
+      word-break: break-all;
+      span {
+        width: 2rem;
+      }
+      &:not(:last-child) {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+      }
+      display: inline-flex;
+    }
+  }
+  &__left,
+  &__right {
+    margin-bottom: var(--common-space);
+    background-color: $white;
+    padding: var(--common-space);
+    @include responsive(min992) {
+      min-height: 100%;
+      padding: calc(var(--common-space-xl) / 1.2);
+    }
+    border-radius: var(--border-theme);
+    border: 1px solid rgba($primary, 0.2);
+  }
+}
+
+.follow {
+  margin-top: 2.5rem;
+  :global {
+    .social {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.tabs {
+  margin-top: 3rem;
+  &__area {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--common-space-xl);
+    @include responsive(min992) {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+  }
+  &__left {
+    max-width: 100%;
+    flex-wrap: nowrap;
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-self: stretch;
+    @include responsive(min992) {
+      align-self: inherit;
+      flex-wrap: wrap;
+      flex: 0 0 35%;
+    }
+    overflow: auto;
+    :global {
+      .nav-item {
+        display: flex;
+        align-self: stretch;
+        min-width: 75%;
+        font-size: var(--font-smallest);
+        @include responsive(min992) {
+          width: 100%;
+          white-space: wrap;
+        }
+        margin-bottom: 0.5rem;
+      }
+      .nav-link {
+        flex: 1 1 100%;
+        background-color: rgba($primary, 0.1);
+        border: 1px solid rgba($primary, 0.1);
+      }
+    }
+  }
+  &__right {
+    width: 100%;
+    @include responsive(min992) {
+      flex: 0 0 calc(65% - var(--common-space-xl));
+    }
+    iframe {
+      height: 50vh;
+    }
+  }
+}

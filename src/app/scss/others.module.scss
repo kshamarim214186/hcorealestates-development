@@ -1,0 +1,86 @@
+@import "./common/variables";
+@import "./common/mixins";
+
+.wrapper {
+  .thank {
+    padding: var(--common-space-xl) 0;
+    min-height: calc(100vh - 20rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    :global {
+      .h1 {
+        font-size: 11vw;
+        @include responsive(min640) {
+          font-size: 4rem;
+        }
+        color: green;
+      }
+    }
+  }
+  .disclaimer {
+    @extend .thank;
+    text-align: left;
+    align-items: flex-start;
+    p {
+      text-align: justify;
+    }
+  }
+}
+.error {
+  text-align: center;
+  background-color: $primary;
+  position: relative;
+  height: 100vh;
+  &__white {
+    background-color: $white;
+    height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  &__inner {
+    position: relative;
+    .text404 {
+      font-size: 40vw;
+      @include responsive(min640) {
+        font-size: 14rem;
+      }
+      font-weight: var(--font-bold);
+      line-height: 0.9;
+      position: relative;
+      color: #9e9e9e;
+    }
+    .rocket {
+      position: absolute;
+      top: -4rem;
+      left: calc(50% - 50px);
+      z-index: auto;
+      width: 70px;
+      @include responsive(min640) {
+        width: 100px;
+      }
+      height: auto;
+    }
+    .cloud {
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 30px);
+      z-index: 2;
+      width: 100px;
+      @include responsive(min640) {
+        width: 200px;
+      }
+      height: auto;
+    }
+  }
+  &__info {
+    padding: var(--common-space);
+    color: $white;
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+}

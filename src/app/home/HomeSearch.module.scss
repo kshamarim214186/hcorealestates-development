@@ -1,0 +1,19 @@
+@import "../scss/common/variables";
+@import "../scss/common/mixins";
+.homesearch {
+  border: red solid 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner {
+    position: relative;
+    border: green solid 1px;
+    min-height: 100%;
+  }
+}

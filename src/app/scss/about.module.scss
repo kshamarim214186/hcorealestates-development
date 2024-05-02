@@ -1,0 +1,246 @@
+@import "./common/variables";
+@import "./common/mixins";
+
+.about__banner {
+  position: relative;
+  z-index: -1;
+  @include responsive(min768) {
+    height: 450px;
+  }
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+}
+
+.aboutSection {
+  padding: var(--common-space) 0;
+  @include responsive(min992) {
+    padding: var(--common-space-xl) 0;
+  }
+  .aboutLeft {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &::before,
+    &::after {
+      height: 150px;
+      width: 150px;
+      content: "";
+    }
+    &::before {
+      background-color: rgba($primary, 0.05);
+      position: relative;
+      z-index: -2;
+    }
+    &::after {
+      border: 3px solid rgba($primary, 0.4);
+      position: absolute;
+      z-index: -1;
+      top: 1rem;
+      left: 1rem;
+    }
+    &__heading {
+      text-transform: uppercase;
+      margin-left: -7rem;
+    }
+  }
+  .aboutRight {
+    p {
+      text-align: justify;
+      @include responsive(min768) {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  .others {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    @include responsive(min768) {
+      flex-wrap: nowrap;
+    }
+    gap: 2rem;
+    &List {
+      background-color: rgba($primary, 0.05);
+      border: 1px solid rgba($primary, 0.4);
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 0.5rem;
+      flex: 1 1 100%;
+      @include responsive(min768) {
+        flex: 1 1 33.3%;
+      }
+      .count {
+        flex: 1 1 70%;
+        .h1 {
+          line-height: 1;
+          margin-bottom: 0;
+          font-weight: 800;
+          color: $primary;
+        }
+        small {
+          font-weight: 600;
+        }
+      }
+      .icons {
+        align-self: flex-start;
+        // border: red solid 1px;
+      }
+    }
+    &-text {
+      margin-top: 1.5rem;
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.teamContent {
+  text-align: center;
+  padding: var(--common-space) 0;
+  @include responsive(min992) {
+    padding: var(--common-space-xl) 0;
+  }
+  .teams {
+    margin-top: 2rem;
+    @include responsive(min992) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .imgBg {
+      background-color: rgba($primary, 0.1);
+      border-radius: 0.5rem 0.5rem 0 0;
+      padding-top: 1.5rem;
+    }
+    figcaption {
+      padding: 1rem;
+      text-align: center;
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.process {
+  padding: var(--common-space) 0;
+  @include responsive(min992) {
+    padding: var(--common-space-xl) 0;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .process__sub {
+    margin-top: 2.5rem;
+  }
+}
+
+.award {
+  background-color: rgba($primary, 0.03);
+  padding: var(--common-space-xl) 0;
+  @include responsive(min992) {
+    padding: var(--common-space-xl) 0;
+  }
+  position: relative;
+  text-align: center;
+  .leaves {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .awards {
+    margin-top: 1.5rem;
+    background-color: $white;
+    border: 1px solid rgba($primary, 0.4);
+    padding: 1.5rem 1.5rem 1rem;
+    border-radius: 0.3rem;
+    figcaption {
+      margin-top: 0.7rem;
+    }
+  }
+}
+
+.faq {
+  background-color: rgba($primary, 0.05);
+  padding: var(--common-space) 0;
+  @include responsive(min992) {
+    padding: var(--common-space-xl) 0;
+  }
+  .h1 {
+    span {
+      display: block;
+    }
+    @include responsive(max767) {
+      border-bottom: 1px solid rgba($primary, 0.1);
+      padding-bottom: 1rem;
+    }
+  }
+
+  .accordion {
+    --bs-accordion-bg: none;
+    :global {
+      .accordion-button {
+        padding: var(--bs-accordion-btn-padding-y) 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        &:focus {
+          box-shadow: none;
+        }
+        &:not(.collapsed) {
+          // color: inherit;
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+
+      .accordion-item {
+        border: none;
+        border-bottom: solid var(--bs-accordion-border-width) var(--bs-accordion-border-color);
+      }
+      .accordion-body {
+        padding: 0 0 var(--bs-accordion-body-padding-y);
+      }
+    }
+  }
+}
+
+.question {
+  margin-top: calc(var(--common-space-xl) * 1.5);
+  margin-bottom: var(--common-space);
+  background-color: $white;
+  border-radius: 1rem;
+  border: 1px solid rgba($primary, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  @include responsive(min768) {
+    text-align: inherit;
+    flex-wrap: nowrap;
+  }
+  &__left {
+    @include responsive(max767) {
+      padding: 1rem;
+      flex: 1 1 100%;
+    }
+    flex: 1 1 55%;
+    img {
+      max-height: 350px;
+      object-fit: contain;
+      object-position: left bottom;
+    }
+    @include responsive(min576) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  &__right {
+    flex: 1 1 45%;
+    padding: 1rem;
+    align-self: center;
+  }
+}

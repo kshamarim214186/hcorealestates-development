@@ -1,0 +1,168 @@
+.builder .swiperCustomControl :global {
+  overflow-y: inherit;
+  overflow-x: clip;
+}
+.builder .swiperCustomControl :global .swiper-button-prev,
+.builder .swiperCustomControl :global .swiper-button-next {
+  top: -1.7rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100vmax;
+  background-color: #fff;
+  border: 1px solid rgba(100, 52, 132, 0.2);
+  box-shadow: 0px 5px 3px 0px rgba(100, 52, 132, 0.45);
+}
+.builder .swiperCustomControl :global .swiper-button-prev:hover,
+.builder .swiperCustomControl :global .swiper-button-next:hover {
+  background-color: #643484;
+  color: #fff;
+}
+.builder .swiperCustomControl :global .swiper-button-prev::after,
+.builder .swiperCustomControl :global .swiper-button-next::after {
+  font-size: var(--swiper-navigation-size)/2;
+  font-weight: var(--font-bold);
+}
+.builder .swiperCustomControl :global .swiper-button-prev {
+  left: inherit;
+  right: 2.7rem;
+}
+.builder .swiperCustomControl :global .swiper-button-next {
+  right: 0.2rem;
+}
+
+.builder :global .list {
+  position: relative;
+}
+.builder :global .list a {
+  color: inherit;
+}
+.builder :global .list .thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-theme);
+}
+.builder :global .list h5 {
+  margin-top: 0.9rem;
+}
+.builder :global .list ul {
+  font-size: 0.9rem;
+}
+.builder :global .list ul li {
+  padding: 0.1rem 0;
+}
+.builder :global .list img {
+  height: 280px;
+  border-radius: var(--border-theme);
+  transition: all 0.3s ease;
+}
+.builder :global .list:hover img {
+  transform: scale(1.1);
+}
+.builder :global .list:hover a:hover {
+  color: #643484;
+}
+
+.main {
+  margin-top: 1.5rem;
+}
+.main h1 {
+  border-bottom: 1px solid rgba(100, 52, 132, 0.2);
+  padding-bottom: 0.5rem;
+  font-size: var(--heading-font);
+}
+@media (min-width: 768px) {
+  .main h1 {
+    font-size: 1.625rem;
+  }
+}
+
+.bredcrumb {
+  display: none;
+}
+@media (min-width: 768px) {
+  .bredcrumb {
+    display: block;
+  }
+}
+
+.builder {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(100, 52, 132, 0.2);
+  padding-bottom: var(--common-space);
+  padding-top: var(--common-space);
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  max-width: 100%;
+}
+.builder__info {
+  padding-bottom: var(--common-space);
+}
+@media (min-width: 768px) {
+  .builder__info {
+    flex: 0 0 auto;
+    width: 33.3%;
+  }
+}
+.builder__info .logo {
+  border: rgba(100, 52, 132, 0.2) solid 1px;
+  padding: 0.5rem;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: var(--border-theme);
+}
+.builder__projects {
+  position: relative;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .builder__projects {
+    flex: 0 0 auto;
+    width: calc(66.6% - 2rem);
+  }
+}
+.builder :global .list {
+  display: flex;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
+  border: rgba(100, 52, 132, 0.2) solid 1px;
+  border-radius: var(--border-theme);
+}
+.builder :global .list h5 {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .builder :global .list h5 {
+    font-size: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .builder :global .list {
+    border: inherit;
+    display: inherit;
+    -moz-column-gap: inherit;
+         column-gap: inherit;
+  }
+}
+.builder :global .list img {
+  height: 150px;
+}
+@media (min-width: 768px) {
+  .builder :global .list img {
+    height: 210px;
+  }
+}
+.builder .swiperCustomControl :global .swiper-button-prev,
+.builder .swiperCustomControl :global .swiper-button-next {
+  top: 50%;
+}
+.builder .swiperCustomControl :global .swiper-button-next {
+  right: -10px;
+}
+.builder .swiperCustomControl :global .swiper-button-prev {
+  left: -10px;
+}
+
+.paginationcontent {
+  margin-top: 2rem;
+}/*# sourceMappingURL=developer.module.css.map */
