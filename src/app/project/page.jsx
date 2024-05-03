@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from "../scss/properties.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
@@ -70,9 +71,11 @@ export default async function Project() {
                         <SortFilter sortObj={sort} currentpage={currentpage} />
                       </div>
                     </div>
-                    <div className={styles.allList}>
-                        <ProjectByListing resultProperties={resultProperties} pageName={pageName} currentpage={currentpage} />
-                    </div>
+                    <Suspense fallback={<LoadingCustom />}>
+                       <div className={styles.allList}>
+                           <ProjectByListing resultProperties={resultProperties} pageName={pageName} currentpage={currentpage} />
+                       </div>
+                    </Suspense> 
                   </div>
                </div>               
             </div>

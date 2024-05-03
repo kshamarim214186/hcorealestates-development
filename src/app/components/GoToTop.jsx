@@ -5,7 +5,6 @@ export default function GoToTop() {
    const routePath = usePathname()
    const router = useRouter()
    const onTop = () => {
-      router.push(routePath)
       window.scrollTo(0, 0);
    }
    useEffect(() => {
