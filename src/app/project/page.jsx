@@ -1,3 +1,4 @@
+"use client";
 import { Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -8,7 +9,8 @@ import LoadingCustom from '@/app/components/loading-custom';
 import Accordion from "react-bootstrap/Accordion";
 import styles from "../scss/properties.module.scss";
 
-export default async function Properties() {
+
+export default async function Project() {
    const props = getHomeCompleteData();
    const result = await props;
 
