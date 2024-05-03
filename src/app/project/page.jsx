@@ -1,4 +1,5 @@
 "use client";
+import styles from "../scss/properties.module.scss";
 import { Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -7,7 +8,6 @@ import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
 import LoadingCustom from '@/app/components/loading-custom';
 import Accordion from "react-bootstrap/Accordion";
-import styles from "../scss/properties.module.scss";
 
 
 export default async function Project() {
