@@ -28,9 +28,9 @@ export default async function Project() {
    const canonicalUrl = result.pagedata.homeurl+pageName;
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
-         <Suspense fallback={<LoadingCustom />}>
-            <main className={`${styles.container} container-xl`}>
+      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />         
+         <main className={`${styles.container} container-xl`}>
+            <Suspense fallback={<LoadingCustom />}>
                <title>{result.pagedata.proplistseotitle}</title>
                <meta name="description" content={result.pagedata.proplistseodesc} />
                <link rel="canonical" href={canonicalUrl} />
@@ -38,11 +38,11 @@ export default async function Project() {
                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                    <Breadcrumb.Item active>Project</Breadcrumb.Item>
                </Breadcrumb>
-         </Suspense> 
-         <Suspense fallback={<LoadingCustom />}>     
-            <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
-         </Suspense>
-         <Suspense fallback={<LoadingCustom />}>              
+            </Suspense> 
+            <Suspense fallback={<LoadingCustom />}>
+               <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
+            </Suspense> 
+            <Suspense fallback={<LoadingCustom />}>
                <div className="row">
                   <div className="col-lg-12">
                      <div className={styles.overview}>
@@ -57,8 +57,9 @@ export default async function Project() {
                      </div>
                   </div>
                </div> 
-            </main>
-         </Suspense>
+               </Suspense> 
+         </main>
+         
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
