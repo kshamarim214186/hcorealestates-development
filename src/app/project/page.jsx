@@ -57,7 +57,7 @@ export default async function Project() {
                      </div>
                   </div>
                </div> 
-               </Suspense> 
+            </Suspense> 
          </main>
          
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />

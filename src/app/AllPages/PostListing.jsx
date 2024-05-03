@@ -67,9 +67,7 @@ export default async function PostListing() {
                }
             </div>
          </section>
-
-
-
+         
          <section className={styles.blogs}>
             <div className="container-xl">
                <div className="row">
