@@ -37,8 +37,7 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
    const column = 'properties';
    const canonicalUrl = pageData.homeurl+pageName;
    return (
-      <>
-         
+      <>         
          <title>{pageData.proplistseotitle}</title>
          <meta name="description" content={pageData.proplistseodesc} />
          <link rel="canonical" href={canonicalUrl} />

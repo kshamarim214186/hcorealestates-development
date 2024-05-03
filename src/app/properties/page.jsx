@@ -7,7 +7,6 @@ import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
 import LoadingCustom from '@/app/components/loading-custom';
 import Accordion from "react-bootstrap/Accordion";
-
 import styles from "../scss/properties.module.scss";
 
 
