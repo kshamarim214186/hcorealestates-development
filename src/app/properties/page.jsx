@@ -7,7 +7,6 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
-import LoadingCustom from '@/app/components/loading-custom';
 import Accordion from "react-bootstrap/Accordion";
 import Filter from "@/app/components/Filter";
 import SortFilter from "@/app/UI/sort-filter";
@@ -46,7 +45,7 @@ export default async function Properties() {
    return (
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />  
-         <Suspense fallback={<LoadingCustom />}>       
+         <Suspense>       
          <main className={`${styles.container} container-xl`}>
             <title>{result.pagedata.proplistseotitle}</title>
             <meta name="description" content={result.pagedata.proplistseodesc} />
