@@ -1,6 +1,5 @@
 "use client";
 import { Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
 import styles from "../scss/properties.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Header from "@/app/components/Header";
@@ -14,15 +13,6 @@ import ProjectByListing from "@/app/components/ProjectByListing";
 
 
 export default async function Project() {
-   const searchParams = useSearchParams() 
-   const page = searchParams.get('page') ? searchParams.get('page') : "";
-   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
-   const sort = searchParams.get('sort') ? searchParams.get('sort') : "";
-   const getDev = searchParams.get('dev') ? searchParams.get('dev') : "";
-   const getBed = searchParams.get('bed') ? searchParams.get('bed') : "";
-   const getPType = searchParams.get('propertytype') ? searchParams.get('propertytype') : "";
-   const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
-   const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
 
    const props = getHomeCompleteData();
    const result = await props;
