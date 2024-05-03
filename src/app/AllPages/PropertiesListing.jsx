@@ -2,7 +2,6 @@
 import { useSearchParams } from 'next/navigation'
 import { NextSeo } from "next-seo";
 import Image from "next/image";
-import Breadcrumb from "react-bootstrap/Breadcrumb";
 import styles from "../scss/properties.module.scss";
 import Pagination from "react-bootstrap/Pagination";
 import { useState } from "react";
@@ -32,19 +31,8 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
    const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
 
-   
-   
-   const column = 'properties';
-   const canonicalUrl = pageData.homeurl+pageName;
    return (
-      <>         
-         <title>{pageData.proplistseotitle}</title>
-         <meta name="description" content={pageData.proplistseodesc} />
-         <link rel="canonical" href={canonicalUrl} />
-         <Breadcrumb className={styles.bredcurmb}>
-             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-             <Breadcrumb.Item active>Properties</Breadcrumb.Item>
-         </Breadcrumb>
+      <> 
          <div className="row">
             <div className="col-lg-4 sticky-top">
                <div className={`${styles.container__left}`}>                    

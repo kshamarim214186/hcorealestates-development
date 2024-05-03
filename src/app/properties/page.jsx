@@ -1,6 +1,7 @@
 "use client";
 import styles from "../scss/properties.module.scss";
 import { Suspense } from 'react'
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import PropertiesListing from "../AllPages/PropertiesListing";
@@ -24,10 +25,18 @@ export default async function Properties() {
    const commercialData = commData.loctype;
    const pageName = 'properties';
    const projectName = 'Hco Real Estates';
+   const canonicalUrl = result.pagedata.homeurl+pageName;
    return (
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
          <main className={`${styles.container} container-xl`}>
+            <title>{result.pagedata.proplistseotitle}</title>
+            <meta name="description" content={result.pagedata.proplistseodesc} />
+            <link rel="canonical" href={canonicalUrl} />
+            <Breadcrumb className={styles.bredcurmb}>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Properties</Breadcrumb.Item>
+            </Breadcrumb>
             <Suspense fallback={<LoadingCustom />}>
                <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
             </Suspense>         
