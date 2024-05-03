@@ -1,4 +1,10 @@
+"use client";
 import { Suspense } from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../scss/blogs.module.scss";
+import { Breadcrumb } from "react-bootstrap";
+import AsyncPostSearch from "../components/AsyncPostSearch";
 import HeaderBlog from "../components/header-blog";
 import PostListing from "../AllPages/PostListing";
 import Footer from "../components/Footer";
@@ -23,9 +29,41 @@ export default async function AllBlogs() {
    return (
     <>
       <HeaderBlog resultHeader={result.pagedata} />
-         <Suspense fallback={<LoadingCustom />}>
-            <PostListing />
-         </Suspense> 
+         <main>
+            <title>{result.pagedata.blogseotitle}</title>
+            <meta name="description" content={result.pagedata.blogseodesc} />
+            <link rel="canonical" href={`${result.pagedata.homeurl}post`} />                  
+            <section className={styles.bg}>
+               <div className="container-xl">
+                  <div className={styles.bredcrumb}>
+                    <Breadcrumb>
+                      <Breadcrumb.Item href={result.pagedata.homeurl}>Home</Breadcrumb.Item>
+                      <Breadcrumb.Item active>Blogs</Breadcrumb.Item>
+                    </Breadcrumb>
+                  </div>
+               </div>
+               <div className="">
+                  <Image src="/images/background-noimage-art.svg" className="w-100 img-fluid" width={500} height={250} alt="backgroun image" />
+               </div>
+               <div className={styles.bg__content}>
+                  <div className="container-xl">
+                    <div className="row justify-content-center">
+                      <div className="col-md-8">
+                        <h1 className="mb-4">
+                          <small>{result.pagedata.bloghead}</small>{result.pagedata.blogdesc}
+                        </h1>
+                        <div className={styles.bg__search}>
+                          <AsyncPostSearch />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+            </section>
+            <Suspense fallback={<LoadingCustom />}>
+               <PostListing />
+            </Suspense> 
+         </main>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
     </>
   );
