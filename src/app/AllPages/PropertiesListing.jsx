@@ -1,3 +1,5 @@
+"use client";
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { NextSeo } from "next-seo";
 import Image from "next/image";
@@ -17,6 +19,8 @@ import ProjectByListing from "@/app/components/ProjectByListing";
 import Filter from "../components/Filter";
 import ListItems from "../UI/ListItems";
 import CustomPagination from "@/app/components/CustomPagination";
+;
+import LoadingCustom from '@/app/components/loading-custom';
 
 
 export default function PropertiesListing({ develop, pageName, pageData }) {
@@ -32,6 +36,8 @@ export default function PropertiesListing({ develop, pageName, pageData }) {
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
    return (
       <>
+
+            <Suspense fallback={<LoadingCustom />}> 
          <div className="row">
             <div className="col-lg-4 sticky-top">
                <div className={`${styles.container__left}`}>                    
@@ -55,6 +61,7 @@ export default function PropertiesListing({ develop, pageName, pageData }) {
                </div>
             </div>               
          </div>
+         </Suspense> 
       </>
    );
 }

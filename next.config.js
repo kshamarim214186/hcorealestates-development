@@ -8,7 +8,7 @@ module.exports = nextConfig;
 const path = require("path");
 module.exports = {
    env: {
-      API_URL: 'https://www.api.hcorealestates.org/',
+      API_URL: 'https://www.api.gurgaoncityfloors.com/',
       token1: 'test',
       token2: 'test1',
    },
