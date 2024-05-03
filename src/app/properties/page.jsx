@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import PropertiesListing from "../AllPages/PropertiesListing";
@@ -5,7 +6,8 @@ import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
 import LoadingCustom from '@/app/components/loading-custom';
 
-export default async function Project() {
+
+export default async function Properties() {
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -17,7 +19,7 @@ export default async function Project() {
    const commercial = getLocationType('commercial');
    const commData = await commercial;
    const commercialData = commData.loctype;
-   const pageName = 'project';
+   const pageName = 'properties';
    const projectName = 'Hco Real Estates';
    return (
       <>
