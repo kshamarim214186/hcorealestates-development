@@ -45,7 +45,6 @@ export default async function Project() {
    return (
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />   
-      <Suspense>      
          <main className={`${styles.container} container-xl`}>
             <title>{result.pagedata.proplistseotitle}</title>
             <meta name="description" content={result.pagedata.proplistseodesc} />
@@ -71,9 +70,6 @@ export default async function Project() {
                         <SortFilter sortObj={sort} currentpage={currentpage} />
                       </div>
                     </div>
-                    <div className={styles.allList}>
-                        <ProjectByListing resultProperties={resultProperties} pageName={pageName} currentpage={currentpage} />
-                    </div>
                   </div>
                </div>               
             </div>
@@ -92,7 +88,6 @@ export default async function Project() {
                </div>
             </div> 
          </main>
-         </Suspense> 
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
