@@ -192,12 +192,23 @@
         }
         font-size: 0.9rem;
         li {
+          white-space: nowrap;
+          svg {
+            vertical-align: middle;
+            color: rgba($body-color, 0.8);
+          }
           &:not(:last-child) {
             border-right: 1px solid rgba($primary, 0.2);
             padding-right: 0.5rem;
           }
           &:not(:first-child) {
             padding-left: 0.5rem;
+          }
+          &:last-child {
+            padding-left: 0;
+            @media (min-width: 430px) {
+              padding-left: 0.5rem;
+            }
           }
         }
       }

@@ -57,44 +57,48 @@
     }
   }
   .others {
-    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
+    gap: var(--common-space);
     @include responsive(min768) {
-      flex-wrap: nowrap;
+      // flex-wrap: nowrap;
     }
-    gap: 2rem;
     &List {
       background-color: rgba($primary, 0.05);
+      padding: var(--common-space);
       border: 1px solid rgba($primary, 0.4);
-      padding: 2rem;
       display: flex;
       flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
       border-radius: 0.5rem;
-      flex: 1 1 100%;
-      @include responsive(min768) {
-        flex: 1 1 33.3%;
-      }
+      flex: 1 0 calc(25% - (var(--common-space)));
       .count {
-        flex: 1 1 70%;
-        .h1 {
-          line-height: 1;
-          margin-bottom: 0;
-          font-weight: 800;
-          color: $primary;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 0.5rem;
+        height: 80px;
+        width: 100%;
+        :global {
+          .h1 {
+            line-height: 1;
+            font-weight: var(--font-bold);
+            color: $primary;
+            margin-bottom: 1.5rem;
+          }
+          small {
+            // font-weight: 600;
+            display: block;
+            font-size: var(--font-smaller);
+            line-height: 1.5;
+          }
         }
-        small {
-          font-weight: 600;
-        }
-      }
-      .icons {
-        align-self: flex-start;
-        // border: red solid 1px;
       }
     }
     &-text {
-      margin-top: 1.5rem;
-      flex: 1 1 100%;
+      // margin-top: 1.5rem;
+      // flex: 1 1 100%;
+      align-self: flex-start;
     }
   }
 }
@@ -129,14 +133,27 @@
 .process {
   padding: var(--common-space) 0;
   @include responsive(min992) {
-    padding: var(--common-space-xl) 0;
+    padding: calc(3 * var(--common-space-xl)) 0;
   }
   h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+  }
+  .h5 {
+    display: inline-block;
+    border-bottom: 2px solid rgba($primary, 0.3);
+    // border: red solid 1px;
   }
   .process__sub {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
+    border: rgba($primary, 0.3) solid 1px;
+    padding: var(--common-space);
+    min-height: 180px;
+    border-radius: var(--bs-border-radius);
+    p {
+      color: var(--bs-gray-700);
+      margin-bottom: 0;
+    }
   }
 }
 

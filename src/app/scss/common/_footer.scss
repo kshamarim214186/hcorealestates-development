@@ -1,3 +1,4 @@
+
 .footer {
   margin-top: 3rem;
   background-color: $gray-100;
@@ -11,28 +12,32 @@
       display: flex;
       justify-content: space-between;
       // column-gap: 1.5rem;
+
       @include responsive(max991) {
         flex-wrap: wrap;
       }
       &-item {
-        flex: 0 0 calc(50% - 1.5rem);
+        flex: 1 1 100%;
         @include responsive(min992) {
           flex: 0 0 calc(25% - 1.5rem);
           padding: 0;
+          &:not(:last-child) {
+            .accordion-button {
+              border-right: rgba($primary, 0.2) solid 1px;
+            }
+          }
         }
         margin-top: 1rem;
         margin-bottom: 1rem;
         border-radius: 0;
         border: none;
-        &:not(:last-child) {
-          .accordion-button {
-            border-right: rgba($primary, 0.2) solid 1px;
-          }
-        }
       }
       &-button {
         &::after {
-          margin-right: 1rem;
+          @include responsive(min640) {
+            margin-right: 1rem;
+          }
+          // border: red solid 1px;
         }
       }
     }
