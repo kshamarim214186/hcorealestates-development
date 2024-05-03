@@ -18,9 +18,13 @@ import ProjectByListing from "@/app/components/ProjectByListing";
 import Filter from "../components/Filter";
 import ListItems from "../UI/ListItems";
 import CustomPagination from "@/app/components/CustomPagination";
+import getHomeCompleteData from "../api/getHomeCompleteData";
 
 
-export default function PropertiesListing({ developers, pageName, pageData }) {
+export default async function PropertiesListing({ developers, pageName, pageDatafgf }) {
+   const props = getHomeCompleteData();
+   const result = await props;
+   const pageData = result.pagedata;
 
    const searchParams = useSearchParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
