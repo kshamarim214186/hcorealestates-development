@@ -38,9 +38,11 @@ export default async function Project() {
                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
                    <Breadcrumb.Item active>Project</Breadcrumb.Item>
                </Breadcrumb>
-               
-                  <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
-                        
+         </Suspense> 
+         <Suspense fallback={<LoadingCustom />}>     
+            <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
+         </Suspense>
+         <Suspense fallback={<LoadingCustom />}>              
                <div className="row">
                   <div className="col-lg-12">
                      <div className={styles.overview}>
