@@ -1,5 +1,5 @@
 "use client";
-import { useSearchParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { Suspense } from 'react'
 import styles from "../scss/properties.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
@@ -14,7 +14,7 @@ import ProjectByListing from "@/app/components/ProjectByListing";
 
 
 export default async function Project() {
-   const searchParams = useSearchParams() 
+   const searchParams = useParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
    const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
    const sort = searchParams.get('sort') ? searchParams.get('sort') : "";
