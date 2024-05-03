@@ -24,6 +24,9 @@ export default async function Project() {
    const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
 
+   const properties = getProjectListingDetails(page, sort, getDev, getBed, getPType, priceMin, priceMax);
+   const resultProperties = await properties;
+
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -38,9 +41,6 @@ export default async function Project() {
    const pageName = 'project';
    const projectName = 'Hco Real Estates';
    const canonicalUrl = result.pagedata.homeurl+pageName;
-
-   const properties = getProjectListingDetails(page, sort, getDev, getBed, getPType, priceMin, priceMax);
-   const resultProperties = await properties;
 
    return (
       <>
