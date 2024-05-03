@@ -1,11 +1,8 @@
-import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react';
 import ListItems from "../UI/ListItems";
 import styles from "../scss/developer.module.scss";
 import CustomPagination from "@/app/components/CustomPagination";
 
 export default function ProjectByListing({ resultProperties, pageName, currentpage }) { 
-   const router = useRouter()  
    const properties = resultProperties.propertydata;
    const message = resultProperties.message;
    const totalrecords = resultProperties.totalrecords;

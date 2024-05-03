@@ -54,26 +54,7 @@ export default async function Properties() {
                 <Breadcrumb.Item active>Project</Breadcrumb.Item>
             </Breadcrumb>
 
-            <div className="row">
-               <div className="col-lg-4 sticky-top">
-                  <div className={`${styles.container__left}`}>                    
-                     <Filter developer={result.developerdata} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
-                  </div>
-               </div>
-               <div className="col-lg-8">
-                  <div className={styles.container__right}>
-                    <div className={styles.listInfo}>
-                      <div className="">
-                        <div className="h1">{result.pagedata.proplisth2}</div>                        
-                      </div>
-                      <div className={styles.sort}>
-                        <SortFilter sortObj={sort} currentpage={currentpage} />
-                      </div>
-                    </div>
-                    
-                  </div>
-               </div>               
-            </div>
+            
             <div className="row">
                <div className="col-lg-12">
                   <div className={styles.overview}>
