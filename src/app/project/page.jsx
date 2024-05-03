@@ -24,9 +24,6 @@ export default async function Project() {
    const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
 
-   const properties = getProjectListingDetails(page, sort, getDev, getBed, getPType, priceMin, priceMax);
-   const resultProperties = await properties;
-
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -51,25 +48,4 @@ export default async function Project() {
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
-}
-
-async function getProjectListingDetails(page, sortObj, devObj, bedObj, ptypeObj, minObj, maxObj) {
-   const formData = new URLSearchParams();
-   formData.append('token1', process.env.token1);
-   formData.append('token2', process.env.token2);
-   formData.append('page', page);
-   formData.append('sortcon', sortObj);
-   formData.append('devurl', devObj);
-   formData.append('bed', bedObj);
-   formData.append('propertytype', ptypeObj);
-   formData.append('pricemin', minObj);
-   formData.append('pricemax', maxObj);
-   const finalresult = await fetch(process.env.API_URL+'properties/getAllPropertiesData/', {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: formData,
-   });  
-   return finalresult.json();
 }
