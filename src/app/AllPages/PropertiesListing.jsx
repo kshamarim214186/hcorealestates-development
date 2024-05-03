@@ -36,32 +36,32 @@ export default function PropertiesListing({ develop, pageName, pageData }) {
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
    return (
       <>
-
-            <Suspense fallback={<LoadingCustom />}> 
-         <div className="row">
-            <div className="col-lg-4 sticky-top">
-               <div className={`${styles.container__left}`}>                    
-                  <Filter developer={develop} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
+            <div className="row">
+               <div className="col-lg-4 sticky-top">
+                  <div className={`${styles.container__left}`}>                    
+                     <Filter developer={develop} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
+                  </div>
                </div>
+               <div className="col-lg-8">
+                  <div className={styles.container__right}>
+                    <div className={styles.listInfo}>
+                      <div className="">
+                        <div className="h1">{pageData.proplisth2}</div>                        
+                      </div>
+                      <div className={styles.sort}>
+                        <SortFilter sortObj={sort} currentpage={currentpage} />
+                      </div>
+                    </div>
+                    <div className={styles.allList}>
+                    
+         <Suspense fallback={<LoadingCustom />}> 
+                        <ProjectByListing page={page} pageName={pageName} currentpage={currentpage} sortObj={sort} devObj={getDev} bedObj={getBed} ptypeObj={getPType}  minObj={priceMin} maxObj={priceMax} />
+         </Suspense>             
+                    </div>
+                  </div>
+               </div>               
             </div>
-            <div className="col-lg-8">
-               <div className={styles.container__right}>
-                 <div className={styles.listInfo}>
-                   <div className="">
-                     <div className="h1">{pageData.proplisth2}</div>                        
-                   </div>
-                   <div className={styles.sort}>
-                     <SortFilter sortObj={sort} currentpage={currentpage} />
-                   </div>
-                 </div>
-                 <div className={styles.allList}>
-                     <ProjectByListing page={page} pageName={pageName} currentpage={currentpage} sortObj={sort} devObj={getDev} bedObj={getBed} ptypeObj={getPType}  minObj={priceMin} maxObj={priceMax} />
-                  
-                 </div>
-               </div>
-            </div>               
-         </div>
-         </Suspense> 
+         
       </>
    );
 }
