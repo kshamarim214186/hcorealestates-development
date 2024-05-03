@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import styles from "../scss/properties.module.scss";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
@@ -44,7 +45,8 @@ export default async function Properties() {
 
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />         
+      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />  
+         <Suspense fallback={<LoadingCustom />}>       
          <main className={`${styles.container} container-xl`}>
             <title>{result.pagedata.proplistseotitle}</title>
             <meta name="description" content={result.pagedata.proplistseodesc} />
@@ -70,9 +72,11 @@ export default async function Properties() {
                         <SortFilter sortObj={sort} currentpage={currentpage} />
                       </div>
                     </div>
+                    
                     <div className={styles.allList}>
                         <ProjectByListing resultProperties={resultProperties} pageName={pageName} currentpage={currentpage} />
                     </div>
+                    
                   </div>
                </div>               
             </div>
@@ -91,7 +95,7 @@ export default async function Properties() {
                </div>
             </div> 
          </main>
-         
+         </Suspense> 
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );

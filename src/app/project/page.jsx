@@ -44,7 +44,8 @@ export default async function Project() {
 
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />         
+      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />   
+      <Suspense fallback={<LoadingCustom />}>      
          <main className={`${styles.container} container-xl`}>
             <title>{result.pagedata.proplistseotitle}</title>
             <meta name="description" content={result.pagedata.proplistseodesc} />
@@ -91,7 +92,7 @@ export default async function Project() {
                </div>
             </div> 
          </main>
-         
+         </Suspense> 
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
