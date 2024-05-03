@@ -5,6 +5,7 @@ import PropertiesListing from "../AllPages/PropertiesListing";
 import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
 import LoadingCustom from '@/app/components/loading-custom';
+import Accordion from "react-bootstrap/Accordion";
 
 export default async function Properties() {
    const props = getHomeCompleteData();
