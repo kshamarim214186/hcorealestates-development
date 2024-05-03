@@ -29,32 +29,34 @@ export default async function Project() {
    return (
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
-         <main className={`${styles.container} container-xl`}>
-            <title>{result.pagedata.proplistseotitle}</title>
-            <meta name="description" content={result.pagedata.proplistseodesc} />
-            <link rel="canonical" href={canonicalUrl} />
-            <Breadcrumb className={styles.bredcurmb}>
-                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-                <Breadcrumb.Item active>Project</Breadcrumb.Item>
-            </Breadcrumb>
-            <Suspense fallback={<LoadingCustom />}>
-               <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
-            </Suspense>         
-            <div className="row">
-               <div className="col-lg-12">
-                  <div className={styles.overview}>
-                     <h1>{result.pagedata.proplisth1}</h1>
-                     <p>{result.pagedata.proplistshortdesc}</p>
-                     <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="1">
-                           <Accordion.Body>{result.pagedata.proplistfulldesc}</Accordion.Body>
-                           <Accordion.Header as={"div"}></Accordion.Header>
-                        </Accordion.Item>
-                     </Accordion>
+         <Suspense fallback={<LoadingCustom />}>
+            <main className={`${styles.container} container-xl`}>
+               <title>{result.pagedata.proplistseotitle}</title>
+               <meta name="description" content={result.pagedata.proplistseodesc} />
+               <link rel="canonical" href={canonicalUrl} />
+               <Breadcrumb className={styles.bredcurmb}>
+                   <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                   <Breadcrumb.Item active>Project</Breadcrumb.Item>
+               </Breadcrumb>
+               
+                  <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
+                        
+               <div className="row">
+                  <div className="col-lg-12">
+                     <div className={styles.overview}>
+                        <h1>{result.pagedata.proplisth1}</h1>
+                        <p>{result.pagedata.proplistshortdesc}</p>
+                        <Accordion defaultActiveKey="0">
+                           <Accordion.Item eventKey="1">
+                              <Accordion.Body>{result.pagedata.proplistfulldesc}</Accordion.Body>
+                              <Accordion.Header as={"div"}></Accordion.Header>
+                           </Accordion.Item>
+                        </Accordion>
+                     </div>
                   </div>
-               </div>
-            </div> 
-         </main>
+               </div> 
+            </main>
+         </Suspense>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
