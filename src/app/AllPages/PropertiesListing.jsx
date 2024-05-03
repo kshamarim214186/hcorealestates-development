@@ -1,5 +1,4 @@
 "use client";
-import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { NextSeo } from "next-seo";
 import Image from "next/image";
@@ -19,11 +18,9 @@ import ProjectByListing from "@/app/components/ProjectByListing";
 import Filter from "../components/Filter";
 import ListItems from "../UI/ListItems";
 import CustomPagination from "@/app/components/CustomPagination";
-;
-import LoadingCustom from '@/app/components/loading-custom';
 
 
-export default function PropertiesListing({ develop, pageName, pageData }) {
+export default function PropertiesListing({ developers, pageName, pageData }) {
 
    const searchParams = useSearchParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
@@ -34,12 +31,25 @@ export default function PropertiesListing({ develop, pageName, pageData }) {
    const getPType = searchParams.get('propertytype') ? searchParams.get('propertytype') : "";
    const priceMin = searchParams.get('price_min') ? searchParams.get('price_min') : "";
    const priceMax = searchParams.get('price_max') ? searchParams.get('price_max') : "";
+
+   
+   
+   const column = 'properties';
+   const canonicalUrl = pageData.homeurl+pageName;
    return (
       <>
+         <main className={`${styles.container} container-xl`}>
+            <title>{pageData.proplistseotitle}</title>
+            <meta name="description" content={pageData.proplistseodesc} />
+            <link rel="canonical" href={canonicalUrl} />
+            <Breadcrumb className={styles.bredcurmb}>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active>Properties</Breadcrumb.Item>
+            </Breadcrumb>
             <div className="row">
                <div className="col-lg-4 sticky-top">
                   <div className={`${styles.container__left}`}>                    
-                     <Filter developer={develop} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
+                     <Filter developer={developers} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
                   </div>
                </div>
                <div className="col-lg-8">
@@ -53,15 +63,26 @@ export default function PropertiesListing({ develop, pageName, pageData }) {
                       </div>
                     </div>
                     <div className={styles.allList}>
-                    
-         <Suspense fallback={<LoadingCustom />}> 
                         <ProjectByListing page={page} pageName={pageName} currentpage={currentpage} sortObj={sort} devObj={getDev} bedObj={getBed} ptypeObj={getPType}  minObj={priceMin} maxObj={priceMax} />
-         </Suspense>             
                     </div>
                   </div>
                </div>               
             </div>
-         
+            <div className="row">
+               <div className="col-lg-12">
+                  <div className={styles.overview}>
+                     <h1>{pageData.proplisth1}</h1>
+                     <p>{pageData.proplistshortdesc}</p>
+                     <Accordion defaultActiveKey="0">
+                        <Accordion.Item eventKey="1">
+                           <Accordion.Body>{pageData.proplistfulldesc}</Accordion.Body>
+                           <Accordion.Header as={"div"}></Accordion.Header>
+                        </Accordion.Item>
+                     </Accordion>
+                  </div>
+               </div>
+            </div>
+         </main>
       </>
    );
 }
