@@ -1,4 +1,5 @@
-import { usePathname, useRouter } from 'next/navigation'
+"use client";
+import { Suspense } from 'react'
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { NextSeo } from "next-seo";
@@ -15,8 +16,6 @@ import TextComponent from "@/app/UI/TextComponent";
 
 
 export default function BuilderListing() {
-   const routePath = usePathname()
-   const router = useRouter()  
   const searchParams = useSearchParams()
   const page = searchParams.get('page') ? searchParams.get('page') : "1";
   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
@@ -44,7 +43,6 @@ export default function BuilderListing() {
                },
                body: formData,
             });  
-            router.push(routePath) 
            const result = await finalresult.json();
            setbuilderData(result.builderdata);
            setMessage(result.message);
@@ -58,45 +56,47 @@ export default function BuilderListing() {
          }
       };
       fetchData();
-   }, [routePath]);
+   }, []);
   
   return (
-    <>                
-      {loading ? (
-        <LoadingCustom />
-      ) : (<div>
-      {message=='success' &&  
-         <div className="row">
-            <div className="col-12">
-               {builderData.map((dev) => (
-                  <div key={dev.id} className={styles.builder}>
-                     <div className={styles.builder__info}>
-                        <Link href={dev.url} className={styles.logo}>
-                           <Image src={dev.devphoto} alt={dev.name} className="img-fluid d-block" width={100} height={45} />
-                        </Link>
-                        <h4 className="mt-3">{dev.name}</h4>
-                         <TextComponent itemObj={dev.description} />
-                        <CustomButton buttonName="Read More" url={dev.url} />
-                     </div>
-                     <div className={styles.builder__projects}>
-                        <ProjectByBuilder itemObj={dev} pageType='builderlisting' />
-                     </div>
-                  </div>
-               ))}
+    <> 
+      <Suspense>               
+         {loading ? (
+           <LoadingCustom />
+         ) : (<div>
+         {message=='success' &&  
+            <div className="row">
                <div className="col-12">
-                  <div className={styles.paginationcontent}>
-                     <CustomPagination totalrecord={totalrecords} pagename="builder" currentpage={currentpage} numberofpage={number_of_page} />
+                  {builderData.map((dev) => (
+                     <div key={dev.id} className={styles.builder}>
+                        <div className={styles.builder__info}>
+                           <Link href={dev.url} className={styles.logo}>
+                              <Image src={dev.devphoto} alt={dev.name} className="img-fluid d-block" width={100} height={45} />
+                           </Link>
+                           <h4 className="mt-3">{dev.name}</h4>
+                            <TextComponent itemObj={dev.description} />
+                           <CustomButton buttonName="Read More" url={dev.url} />
+                        </div>
+                        <div className={styles.builder__projects}>
+                           <ProjectByBuilder itemObj={dev} pageType='builderlisting' />
+                        </div>
+                     </div>
+                  ))}
+                  <div className="col-12">
+                     <div className={styles.paginationcontent}>
+                        <CustomPagination totalrecord={totalrecords} pagename="builder" currentpage={currentpage} numberofpage={number_of_page} />
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
-      }</div>)}
+         }</div>)}
 
-      {message=='record not found' &&
-         <div className='col-12'>
-            <div className="nodata"><FontAwesomeIcon icon={faWarning} /> Sorry, there are no active properties matching your criteria.</div>
-         </div>
-      }
+         {message=='record not found' &&
+            <div className='col-12'>
+               <div className="nodata"><FontAwesomeIcon icon={faWarning} /> Sorry, there are no active properties matching your criteria.</div>
+            </div>
+         }
+      </Suspense> 
       </>
    );
 }
