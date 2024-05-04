@@ -1,4 +1,4 @@
-import { useRouter } from 'next/navigation'
+
 import React, { useEffect, useState } from 'react';
 import SinglePropSection from "../UI/SinglePropSection";
 import styles from "../scss/developer.module.scss";
@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import LoadingCustom from './loading-custom';
 
 export default function ProjectByBuilder({ itemObj, pageType }) { 
-   const router = useRouter()  
    const [properties, setProperties] = useState([]);
    const [message, setMessage] = useState('');
    const [totalrecords, setTotalrecords] = useState('');
@@ -39,7 +38,7 @@ export default function ProjectByBuilder({ itemObj, pageType }) {
          }
       };
       fetchData();
-   }, [router]);
+   }, []);
 
    return ( 
       <>
