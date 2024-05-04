@@ -15,10 +15,9 @@ import LoadingCustom from '../components/loading-custom';
 
 
 export default function BuilderListing({ pageData }) {
-  const searchParams = useSearchParams()
-  const page = searchParams.get('page') ? searchParams.get('page') : "1";
-  const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
-
+  
+  const page = "1";
+  const currentpage = "1";
    
    const [builderData, setbuilderData] = useState([]);
    const [message, setMessage] = useState('');
@@ -59,9 +58,6 @@ export default function BuilderListing({ pageData }) {
   return (
     <>
       <main className={styles.main}>
-      {loading ? (
-                 <LoadingCustom />
-               ) : (<div>
          <title>{pageData.builderseotitle}</title>
          <meta name="description" content={pageData.builderseodesc} />
          <link rel="canonical" href={`${pageData.homeurl}builder`} />
@@ -71,7 +67,9 @@ export default function BuilderListing({ pageData }) {
                <Breadcrumb.Item active>Developers</Breadcrumb.Item>
             </Breadcrumb>
             <h1>{pageData.builderseotitle}</h1>           
-               
+               {loading ? (
+                 <LoadingCustom />
+               ) : (<div>
                {message=='success' &&  
                   <div className="row">
                      <div className="col-12">
@@ -97,7 +95,7 @@ export default function BuilderListing({ pageData }) {
                         </div>
                      </div>
                   </div>
-               }
+               }</div>)}
 
                {message=='record not found' &&
                   <div className='col-12'>
@@ -105,7 +103,6 @@ export default function BuilderListing({ pageData }) {
                   </div>
                }
          </div>
-         </div>)}
       </main >
       </>
    );
