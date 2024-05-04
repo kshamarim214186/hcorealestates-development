@@ -1,4 +1,6 @@
+"use client";
 import { Suspense } from 'react'
+import { useSearchParams } from 'next/navigation';
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BuilderListing from "../AllPages/BuilderListing";
@@ -8,6 +10,10 @@ import LoadingCustom from '@/app/components/loading-custom';
 
 
 export default async function AllDevelopers() {
+   const searchParams = useSearchParams()
+   const page = searchParams.get('page') ? searchParams.get('page') : "1";
+   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
+   
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -25,7 +31,7 @@ export default async function AllDevelopers() {
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
          <Suspense fallback={<LoadingCustom />}>
-            <BuilderListing pageData={result.pagedata} />
+            <BuilderListing pageData={result.pagedata} page={page} currentpage={currentpage} />
          </Suspense>         
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>

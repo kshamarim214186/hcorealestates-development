@@ -14,10 +14,9 @@ import { faWarning } from '@fortawesome/pro-regular-svg-icons';
 import LoadingCustom from '../components/loading-custom';
 
 
-export default function BuilderListing({ pageData }) {
+export default function BuilderListing({ pageData, page, currentpage }) {
   
-  const page = "1";
-  const currentpage = "1";
+
    
    const [builderData, setbuilderData] = useState([]);
    const [message, setMessage] = useState('');
