@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { NextSeo } from "next-seo";
@@ -16,7 +15,6 @@ import LoadingCustom from '../components/loading-custom';
 
 
 export default function BuilderListing({ pageData }) {
-   const router = useRouter()  
   const searchParams = useSearchParams()
   const page = searchParams.get('page') ? searchParams.get('page') : "1";
   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
@@ -56,11 +54,14 @@ export default function BuilderListing({ pageData }) {
          }
       };
       fetchData();
-   }, [router]);
+   }, []);
   
   return (
     <>
       <main className={styles.main}>
+      {loading ? (
+                 <LoadingCustom />
+               ) : (<div>
          <title>{pageData.builderseotitle}</title>
          <meta name="description" content={pageData.builderseodesc} />
          <link rel="canonical" href={`${pageData.homeurl}builder`} />
@@ -70,9 +71,7 @@ export default function BuilderListing({ pageData }) {
                <Breadcrumb.Item active>Developers</Breadcrumb.Item>
             </Breadcrumb>
             <h1>{pageData.builderseotitle}</h1>           
-               {loading ? (
-                 <LoadingCustom />
-               ) : (<div>
+               
                {message=='success' &&  
                   <div className="row">
                      <div className="col-12">
@@ -98,7 +97,7 @@ export default function BuilderListing({ pageData }) {
                         </div>
                      </div>
                   </div>
-               }</div>)}
+               }
 
                {message=='record not found' &&
                   <div className='col-12'>
@@ -106,6 +105,7 @@ export default function BuilderListing({ pageData }) {
                   </div>
                }
          </div>
+         </div>)}
       </main >
       </>
    );
