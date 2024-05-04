@@ -1,5 +1,4 @@
 "use client";
-import { useSearchParams } from 'next/navigation';
 import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,23 +8,18 @@ import ProjectByBuilder from "../components/ProjectByBuilder";
 import CustomPagination from "@/app/components/CustomPagination";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWarning } from '@fortawesome/pro-regular-svg-icons';
-import LoadingCustom from '../components/loading-custom';
 import TextComponent from "@/app/UI/TextComponent";
 
 
-export default async function BuilderListing() {
-  const searchParams = useSearchParams()
-  const page = searchParams.get('page') ? searchParams.get('page') : "1";
-  const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
+export default function BuilderListing({ resultbuild, currentpage }) {
 
    
-   const builders = GetBuilderList(page);
-   const result = await builders;
-   const builderData = result.builderdata;
-   const message = result.message;
-   const totalrecords = result.totalrecords;
-   const perpagerecord = result.perpagerecord;
-   const number_of_page = Math.ceil(result.totalrecords / result.perpagerecord);
+   
+   const builderData = resultbuild.builderdata;
+   const message = resultbuild.message;
+   const totalrecords = resultbuild.totalrecords;
+   const perpagerecord = resultbuild.perpagerecord;
+   const number_of_page = Math.ceil(resultbuild.totalrecords / resultbuild.perpagerecord);
 
 
   return (
@@ -64,19 +58,4 @@ export default async function BuilderListing() {
       }
       </>
    );
-}
-
-async function GetBuilderList(page){
-   const formData = new URLSearchParams();
-   formData.append('page', page);
-   formData.append('token1', process.env.token1);
-   formData.append('token2', process.env.token2);
-   const finalresult = await fetch(process.env.API_URL+'builders/', {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: formData,
-   });  
-   return finalresult.json();
 }
