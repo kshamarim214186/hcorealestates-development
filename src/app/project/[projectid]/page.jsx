@@ -24,7 +24,7 @@ export default async function Page({ params }) {
    return (
       <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
-         <ProjectPage itemObj={resultProp} />
+         
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
