@@ -1,10 +1,12 @@
 "use client";
 import React from 'react';
+import { Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BuilderListing from "@/app/AllPages/BuilderListing";
 import getHomeCompleteData from "@/app/api/getHomeCompleteData";
 import getLocationType from "@/app/api/getLocationType";
+import LoadingCustom from '@/app/components/loading-custom';
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import styles from "@/app/scss/developer.module.scss";
 
@@ -37,7 +39,9 @@ export default async function AllDevelopers() {
                      <Breadcrumb.Item active>Developers</Breadcrumb.Item>
                   </Breadcrumb>
                   <h1>{pageData.builderlisth1}</h1> 
-                  <BuilderListing />
+                  <Suspense fallback={<LoadingCustom />}>
+                     <BuilderListing />
+                  </Suspense> 
                </div>
             </main >                    
          <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
