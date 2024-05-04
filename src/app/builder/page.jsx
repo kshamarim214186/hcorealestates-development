@@ -1,6 +1,6 @@
 "use client";
-import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react'
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import BuilderListing from "../AllPages/BuilderListing";
@@ -13,7 +13,7 @@ export default async function AllDevelopers() {
    const searchParams = useSearchParams()
    const page = searchParams.get('page') ? searchParams.get('page') : "1";
    const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
-   
+
    const props = getHomeCompleteData();
    const result = await props;
 

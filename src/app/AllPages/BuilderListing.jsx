@@ -15,8 +15,6 @@ import LoadingCustom from '../components/loading-custom';
 
 
 export default function BuilderListing({ pageData, page, currentpage }) {
-  
-
    
    const [builderData, setbuilderData] = useState([]);
    const [message, setMessage] = useState('');
