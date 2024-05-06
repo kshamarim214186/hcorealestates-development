@@ -27,7 +27,6 @@ export default async function PostCatListing({ itemObj }) {
    return (
       <>
       {message=='success' ?
-      <Suspense fallback={<LoadingCustom />}>
          <main>
             <title>{postCatData.seotitle}</title>
             <meta name="description" content={postCatData.seodesc} />
@@ -70,7 +69,7 @@ export default async function PostCatListing({ itemObj }) {
                <div className="container-xl">
                   <div className="row">
                      <div className="col-lg-8">
-                        <PostByCategory itemPost={postCatData.id} />
+                        
                      </div>
                      <div className="col-lg-4">
                         <div className={styles.blogs__right}>
@@ -96,7 +95,6 @@ export default async function PostCatListing({ itemObj }) {
                </div>
             </section>
          </main>
-         </Suspense> 
          : <NotFound />
       }
       </>
