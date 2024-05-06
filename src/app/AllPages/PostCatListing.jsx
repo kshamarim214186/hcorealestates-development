@@ -13,10 +13,13 @@ import PostByCategory from "@/app/components/PostByCategory";
 import Subscribe from "@/app/components/subscribe";
 import SideAds from "@/app/components/side-ads";
 import NotFound from "@/app/components/NotFound";
+import getPostByCat from "@/app/api/getPostByCat";
 import LoadingCustom from '@/app/components/loading-custom';
 
-export default function PostCatListing({ resultpostCat }) {
-   
+export default async function PostCatListing({ itemObj }) {
+
+   const postCat = getPostByCat(itemObj);
+   const resultpostCat = await postCat;
    const postCatData = resultpostCat.blogcatdata;
    const message = resultpostCat.message;
    const adsData = resultpostCat.blogads;
@@ -26,6 +29,73 @@ export default function PostCatListing({ resultpostCat }) {
       {message=='success' ?
          <main>
             <title>{postCatData.seotitle}</title>
+            <meta name="description" content={postCatData.seodesc} />
+            <Link rel="canonical" href={postCatData.url} />
+            <section className={styles.bg}>
+               <div className="container-xl">
+                  <div className={styles.bredcrumb}>
+                    <Breadcrumb>
+                      <Breadcrumb.Item href={postCatData.homeurl}>Home</Breadcrumb.Item>
+                      <Breadcrumb.Item href={blogUrl}>Blogs</Breadcrumb.Item>
+                      <Breadcrumb.Item active>Blog Category</Breadcrumb.Item>
+                    </Breadcrumb>
+                  </div>
+               </div>
+               <div className="">
+                  <Image src="/images/background-noimage-art.svg" className="w-100 img-fluid" width={500} height={250} alt="backgroun image" />
+               </div>
+               <div className={styles.bg__content}>
+                  <div className="container-xl">
+                    <div className="row justify-content-center">
+                      <div className="col-md-8">
+                        <h1 className="mb-4">
+                          {postCatData.h1}
+                        </h1>
+                        <div className={styles.bg__search}>
+                          <AsyncPostCatSearch catId={postCatData.id} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+            </section>
+
+            <section className={styles.slides}>
+               <div className="container-xl">
+               </div>
+            </section>
+
+            <section className={styles.blogs}>
+               <div className="container-xl">
+                  <div className="row">
+                     <div className="col-lg-8">
+                        <Suspense fallback={<LoadingCustom />}>
+                           <PostByCategory itemPost={postCatData.id} />
+                        </Suspense>
+                     </div>
+                     <div className="col-lg-4">
+                        <div className={styles.blogs__right}>
+                           <Subscribe />
+                           <Swiper
+                             slidesPerView={1}
+                             autoplay={{
+                               delay: 100,
+                               disableOnInteraction: true,
+                             }}
+                             speed={500}
+                             loop={true}
+                           >
+                              {adsData.map((item) => (
+                               <SwiperSlide key={item.id}>
+                                 <SideAds adsObject={item} />
+                               </SwiperSlide>
+                              ))}
+                           </Swiper>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
          </main>
          : <NotFound />
       }
