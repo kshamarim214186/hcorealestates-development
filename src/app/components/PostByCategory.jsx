@@ -1,12 +1,19 @@
-import styles from "../scss/blogs.module.scss";
-import getPostListByCondition from "../api/getPostListByCondition";
+import { useSearchParams } from 'next/navigation'
+import styles from "@/app/scss/blogs.module.scss";
+import getPostListByCondition from "@/app/api/getPostListByCondition";
 import BlogItems from "../components/BlogItems";
 import CustomPagination from "@/app/components/CustomPagination";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWarning } from '@fortawesome/pro-regular-svg-icons';
 
 
-export default async function PostByCategory({ itemPost, page, currentpage }) { 
+export default async function PostByCategory({ itemPost }) { 
+
+   const searchParams = useSearchParams() 
+   const page = searchParams.get('page') ? searchParams.get('page') : "";
+   const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
+
+
    const post = getPostListByCondition('blog_category_id', itemPost, page);
    const resultpost = await post;
    const postData = resultpost.BlogDataByCon;
