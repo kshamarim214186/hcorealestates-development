@@ -35,7 +35,7 @@ export default function PostListing({ pageData }) {
                        <small>{pageData.bloghead}</small>{pageData.blogdesc}
                      </h1>
                      <div className={styles.bg__search}>
-                        
+                        <AsyncPostSearch />
                      </div>
                    </div>
                  </div>
