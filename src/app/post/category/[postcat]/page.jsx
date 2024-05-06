@@ -18,11 +18,27 @@ export default async function AllBlogs({ params }) {
    const commercialData = commData.loctype;
    const pageName = 'postcategory';
    const projectName = 'Hco Real Estates';
+   const postcats = getPostDetails(decodeURIComponent(params.postcat));
+   const resultPostCats = await postcats;
    return (
       <>
          <HeaderBlog resultHeader={result.pagedata} />
-            <PostCatListing itemObj={decodeURIComponent(params.postcat)} />
+            <PostCatListing  resultpostCat={resultPostCats} />
          <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
       </>
    );
+}
+async function getPostDetails(caturl) {
+   const formData = new URLSearchParams();
+   formData.append('token1', process.env.token1);
+   formData.append('token2', process.env.token2);
+   formData.append('caturl', caturl);
+   const finalresult = await fetch(process.env.API_URL+'blogs/getblogbycat/', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData,
+   });  
+   return finalresult.json();
 }
