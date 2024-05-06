@@ -1,4 +1,3 @@
-"use client";
 import HeaderBlog from "@/app/components/header-blog";
 import PostCatListing from "@/app/AllPages/PostCatListing";
 import Footer from "@/app/components/Footer";
@@ -22,7 +21,7 @@ export default async function AllBlogs({ params }) {
 
    const postcats = getPostDetails(decodeURIComponent(params.postcat));
    const resultPostCats = await postcats;
-
+console.log(resultPostCats)
    return (
       <>
          <HeaderBlog resultHeader={result.pagedata} />
