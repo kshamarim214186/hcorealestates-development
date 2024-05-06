@@ -22,7 +22,7 @@ export default function BuilderListing({ pageData }) {
                <Breadcrumb.Item href={pageData.homeurl}>Home</Breadcrumb.Item>
                <Breadcrumb.Item active>Developers</Breadcrumb.Item>
             </Breadcrumb>
-            <h1>{pageData.builderseotitle}</h1>           
+            <h1>{pageData.builderlisth1}</h1>           
             <Suspense fallback={<LoadingCustom />}>
                <BuilderCompleteListing />
             </Suspense> 

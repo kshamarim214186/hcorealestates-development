@@ -13,13 +13,10 @@ import PostByCategory from "@/app/components/PostByCategory";
 import Subscribe from "@/app/components/subscribe";
 import SideAds from "@/app/components/side-ads";
 import NotFound from "@/app/components/NotFound";
-import getPostByCat from "@/app/api/getPostByCat";
 import LoadingCustom from '@/app/components/loading-custom';
 
-export default async function PostCatListing({ itemObj }) {
-
-   const postCat = getPostByCat(itemObj);
-   const resultpostCat = await postCat;
+export default async function PostCatListing({ resultpostCat }) {
+   
    const postCatData = resultpostCat.blogcatdata;
    const message = resultpostCat.message;
    const adsData = resultpostCat.blogads;
