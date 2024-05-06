@@ -20,7 +20,7 @@ export default async function AllBlogs({ params }) {
    const pageName = 'postcategory';
    const projectName = 'Hco Real Estates';
 
-   const postcats = getPostDetails(decodeURIComponent(params.postcat);
+   const postcats = getPostDetails(decodeURIComponent(params.postcat));
    const resultPostCats = await postcats;
 
    return (
