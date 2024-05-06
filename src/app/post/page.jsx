@@ -1,8 +1,11 @@
+"use client";
+import { Suspense } from 'react'
 import HeaderBlog from "../components/header-blog";
 import PostListing from "../AllPages/PostListing";
 import Footer from "../components/Footer";
 import getHomeCompleteData from "../api/getHomeCompleteData";
 import getLocationType from "../api/getLocationType";
+import LoadingCustom from '@/app/components/loading-custom';
 
 export default async function AllBlogs() {
    const props = getHomeCompleteData();
@@ -21,7 +24,9 @@ export default async function AllBlogs() {
    return (
     <>
       <HeaderBlog resultHeader={result.pagedata} />
-         <PostListing pageData={result.pagedata} />
+         <Suspense fallback={<LoadingCustom />}>
+            <PostListing pageData={result.pagedata} />
+          </Suspense> 
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
     </>
   );
