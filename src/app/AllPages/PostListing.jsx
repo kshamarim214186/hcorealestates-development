@@ -8,7 +8,7 @@ import AsyncPostSearch from "@/app/components/AsyncPostSearch";
 import LoadingCustom from '@/app/components/loading-custom';
 import PostCompleteListing from "@/app/components/PostCompleteListing";
 
-export default async function PostListing({ pageData }) {
+export default function PostListing({ pageData }) {
    return (
       <>
       <main>
@@ -35,9 +35,7 @@ export default async function PostListing({ pageData }) {
                        <small>{pageData.bloghead}</small>{pageData.blogdesc}
                      </h1>
                      <div className={styles.bg__search}>
-                        <Suspense fallback={<LoadingCustom />}>
-                           <AsyncPostSearch />
-                        </Suspense> 
+                        
                      </div>
                    </div>
                  </div>
