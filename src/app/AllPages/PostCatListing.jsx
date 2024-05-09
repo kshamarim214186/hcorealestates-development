@@ -15,9 +15,7 @@ import SideAds from "@/app/components/side-ads";
 import NotFound from "@/app/components/NotFound";
 import LoadingCustom from '@/app/components/loading-custom';
 
-export default function PostCatListing({ resultpostCat }) {
-
-   
+export default function PostCatListing({ resultpostCat }) {   
    const postCatData = resultpostCat.blogcatdata;
    const message = resultpostCat.message;
    const adsData = resultpostCat.blogads;

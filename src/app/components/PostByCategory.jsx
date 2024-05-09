@@ -1,3 +1,4 @@
+"use client";
 import { useSearchParams } from 'next/navigation'
 import styles from "@/app/scss/blogs.module.scss";
 import getPostListByCondition from "@/app/api/getPostListByCondition";
