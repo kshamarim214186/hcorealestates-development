@@ -20,9 +20,7 @@ export default async function Properties() {
    const projectName = 'Hco Real Estates';
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
-         <PropertiesListing developers={result.developerdata} pageName={pageName} pageData={result.pagedata} />
-      <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
+      <p>sdsfdf</p>
       </>
    );
 }
