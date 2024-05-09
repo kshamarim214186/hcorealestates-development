@@ -13,6 +13,7 @@ import styles from "@/app/scss/others.module.scss"
 import ContactUsMain from "@/app/AllPages/ContactUsMain";
 import DisclaimerMain from "@/app/AllPages/DisclaimerMain";
 import NriMain from "@/app/AllPages/NriMain";
+import PropertiesListing from "@/app/AllPages/PropertiesListing";
 
 export default async function AboutUs() {
 const routePath = usePathname()
@@ -38,6 +39,7 @@ const routePath = usePathname()
    const tdata = teamresult.teamdata;
    const pageName = 'About Us';
    const projectName = 'Hco Real Estates';
+   console.log("dfsdf");
    return (
     <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
@@ -66,6 +68,10 @@ const routePath = usePathname()
          <main className={styles.wrapper}>
             <NriMain />
          </main>:
+
+         routePath=='/project' ?
+            <PropertiesListing developers={result.developerdata} pageName='project' pageData={result.pagedata} />
+         :
 
          <NotFound />
       }
