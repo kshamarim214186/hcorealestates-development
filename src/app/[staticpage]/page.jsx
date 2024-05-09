@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/app/components/Header";
 import AboutUsMain from "../AllPages/AboutUsMain";
 import Footer from "@/app/components/Footer";
@@ -6,7 +5,6 @@ import AboutFaq from "@/app/components/AboutFaq";
 import getHomeCompleteData from "@/app/api/getHomeCompleteData";
 import getLocationType from "@/app/api/getLocationType";
 import getTeamDetails from "@/app/api/getTeamDetails";
-import { usePathname,useRouter } from 'next/navigation'
 import NotFound from "@/app/components/NotFound";
 import PrivacyMain from "@/app/AllPages/PrivacyMain";
 import styles from "@/app/scss/others.module.scss"
@@ -14,9 +12,9 @@ import ContactUsMain from "@/app/AllPages/ContactUsMain";
 import DisclaimerMain from "@/app/AllPages/DisclaimerMain";
 import NriMain from "@/app/AllPages/NriMain";
 import PropertiesListing from "@/app/AllPages/PropertiesListing";
+import BuilderListing from "@/app/AllPages/BuilderListing";
 
-export default async function AboutUs() {
-const routePath = usePathname()
+export default async function StaticPage({ params }) {
    const props = getHomeCompleteData();
    const result = await props;
    const pageData = result.pagedata;
@@ -37,40 +35,56 @@ const routePath = usePathname()
    const fqdata = teamresult.faqdata;
    const awdata = teamresult.awarddata;
    const tdata = teamresult.teamdata;
-   const pageName = 'About Us';
+   const pageName = params.staticpage=='about-us'  ? 'About Us' :
+                    params.staticpage=='privacy-policy'  ? 'Privacy Policy' :
+                    params.staticpage=='contact-us'  ? 'Contact Us' :
+                    params.staticpage=='disclaimer'  ? 'Disclaimer' :
+                    params.staticpage=='nri-real-estate-investment'  ? 'Nri Real Estate Investment' : "Not Found";
+
    const projectName = 'Hco Real Estates';
-   console.log("dfsdf");
+   
+   const otherpages = getOtherPageDetails(params.staticpage);
+   const resultOtherPage = await otherpages;
+
    return (
     <>
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
-      { routePath=='/about-us' ?
+      { params.staticpage=='about-us'  ?
          <main>       
-            <AboutUsMain itemConndata={conndata} itemAwdata={awdata} itemTdata={tdata} />
+            <AboutUsMain itemConndata={conndata} itemAwdata={awdata} itemTdata={tdata} resultOtherPage={resultOtherPage} />
             <AboutFaq fqdata={fqdata} />
          </main>:
 
-         routePath=='/privacy-policy' ?
+         params.staticpage=='privacy-policy' ?
          <main className={styles.wrapper}>
-            <PrivacyMain />
+            <PrivacyMain resultOtherPage={resultOtherPage} />
          </main>: 
 
-         routePath=='/contact-us' ?
+         params.staticpage=='contact-us' ?
          <main>
-            <ContactUsMain itempageData={pageData} />
+            <ContactUsMain itempageData={pageData} resultOtherPage={resultOtherPage} />
          </main>: 
 
-         routePath=='/disclaimer' ?
+         params.staticpage=='disclaimer' ?
          <main>
-            <DisclaimerMain />
+            <DisclaimerMain resultOtherPage={resultOtherPage} />
          </main>:
 
-         routePath=='/nri-real-estate-investment' ?
+         params.staticpage=='nri-real-estate-investment' ?
          <main className={styles.wrapper}>
-            <NriMain />
+            <NriMain resultOtherPage={resultOtherPage} />
          </main>:
 
-         routePath=='/project' ?
+         params.staticpage=='/project' ?
             <PropertiesListing developers={result.developerdata} pageName='project' pageData={result.pagedata} />
+         :
+
+         params.staticpage=='/properties' ?
+            <PropertiesListing developers={result.developerdata} pageName='project' pageData={result.pagedata} />
+         :
+
+         params.staticpage=='/builder' ?
+            <BuilderListing pageData={result.pagedata} />
          :
 
          <NotFound />
@@ -78,4 +92,19 @@ const routePath = usePathname()
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
     </>
   );
+}
+
+async function getOtherPageDetails(url) {
+   const formData = new URLSearchParams();
+   formData.append('token1', process.env.token1);
+   formData.append('token2', process.env.token2);
+   formData.append('url', url);
+   const finalresult = await fetch(process.env.API_URL+'other-pages/', {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData,
+   });  
+   return finalresult.json();
 }
