@@ -43,7 +43,6 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
             formData.append('pricemax', maxObj);
             const finalresult = await fetch(process.env.API_URL+'properties/getAllPropertiesData/', {
                method: 'POST',
-               next: { revalidate: 600 },
                headers: {
                   'Content-Type': 'application/x-www-form-urlencoded',
                },
