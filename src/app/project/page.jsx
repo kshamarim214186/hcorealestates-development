@@ -1,3 +1,5 @@
+import { cache } from 'react'
+export const revalidate = 10
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import PropertiesListing from "../AllPages/PropertiesListing";
