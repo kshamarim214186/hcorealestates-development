@@ -4,6 +4,7 @@ export default async function getHomeCompleteData() {
    formData.append('token2', process.env.token2);
    const finalresult = await fetch(process.env.API_URL+'pages/', {
       method: 'POST',
+      cache: 'no-cache',
       headers: {
          'Content-Type': 'application/x-www-form-urlencoded',
       },
