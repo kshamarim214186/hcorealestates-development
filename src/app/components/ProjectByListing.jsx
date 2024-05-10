@@ -1,11 +1,12 @@
 "use client";
+import { cache } from 'react'
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react';
 import ListItems from "../UI/ListItems";
 import styles from "../scss/properties.module.scss";
 import CustomPagination from "@/app/components/CustomPagination";
 import LoadingCustom from './loading-custom';
-
+export const revalidate = 10
 import SortFilter from "@/app/UI/sort-filter";
 import Filter from "../components/Filter";
 
