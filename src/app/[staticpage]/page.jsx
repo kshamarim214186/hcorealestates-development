@@ -11,8 +11,6 @@ import styles from "@/app/scss/others.module.scss"
 import ContactUsMain from "@/app/AllPages/ContactUsMain";
 import DisclaimerMain from "@/app/AllPages/DisclaimerMain";
 import NriMain from "@/app/AllPages/NriMain";
-import PropertiesListing from "@/app/AllPages/PropertiesListing";
-import BuilderListing from "@/app/AllPages/BuilderListing";
 
 export default async function StaticPage({ params }) {
    const props = getHomeCompleteData();
@@ -74,18 +72,6 @@ export default async function StaticPage({ params }) {
          <main className={styles.wrapper}>
             <NriMain resultOtherPage={resultOtherPage} />
          </main>:
-
-         params.staticpage=='/project' ?
-            <PropertiesListing developers={result.developerdata} pageName='project' pageData={result.pagedata} />
-         :
-
-         params.staticpage=='/properties' ?
-            <PropertiesListing developers={result.developerdata} pageName='project' pageData={result.pagedata} />
-         :
-
-         params.staticpage=='/builder' ?
-            <BuilderListing pageData={result.pagedata} />
-         :
 
          <NotFound />
       }
