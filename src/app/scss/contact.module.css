@@ -1,0 +1,118 @@
+.bg {
+  background-color: rgba(100, 52, 132, 0.1);
+  padding: var(--common-space) 0 6rem;
+}
+.bg .para {
+  font-size: 1.2rem;
+}
+
+.info {
+  text-align: center;
+  padding: 8vh 0 4vh;
+}
+.info h1 small {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.contact {
+  position: relative;
+  z-index: 1;
+  margin-top: -6rem;
+}
+.contact__info {
+  display: flex;
+  flex-direction: column;
+}
+.contact__info a {
+  word-break: break-all;
+  display: inline-flex;
+}
+.contact__info a span {
+  width: 2rem;
+}
+.contact__info a:not(:last-child) {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.contact__left, .contact__right {
+  margin-bottom: var(--common-space);
+  background-color: #fff;
+  padding: var(--common-space);
+  border-radius: var(--border-theme);
+  border: 1px solid rgba(100, 52, 132, 0.2);
+}
+@media (min-width: 992px) {
+  .contact__left, .contact__right {
+    min-height: 100%;
+    padding: calc(var(--common-space-xl) / 1.2);
+  }
+}
+
+.follow {
+  margin-top: 2.5rem;
+}
+.follow :global .social {
+  justify-content: flex-start;
+}
+
+.tabs {
+  margin-top: 3rem;
+}
+.tabs__area {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: var(--common-space-xl);
+       column-gap: var(--common-space-xl);
+}
+@media (min-width: 992px) {
+  .tabs__area {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+}
+.tabs__left {
+  max-width: 100%;
+  flex-wrap: nowrap;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-self: stretch;
+  overflow: auto;
+}
+@media (min-width: 992px) {
+  .tabs__left {
+    align-self: inherit;
+    flex-wrap: wrap;
+    flex: 0 0 35%;
+  }
+}
+.tabs__left :global .nav-item {
+  display: flex;
+  align-self: stretch;
+  min-width: 75%;
+  font-size: var(--font-smallest);
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 992px) {
+  .tabs__left :global .nav-item {
+    width: 100%;
+    white-space: wrap;
+  }
+}
+.tabs__left :global .nav-link {
+  flex: 1 1 100%;
+  background-color: rgba(100, 52, 132, 0.1);
+  border: 1px solid rgba(100, 52, 132, 0.1);
+}
+.tabs__right {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .tabs__right {
+    flex: 0 0 calc(65% - var(--common-space-xl));
+  }
+}
+.tabs__right iframe {
+  height: 50vh;
+}/*# sourceMappingURL=contact.module.css.map */

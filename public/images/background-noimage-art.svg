@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="115px" enable-background="new 590 -48 1280 115" version="1.1" viewBox="590 -48 1280 115" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<path d="m1228.7-17h81.6c-7.4-9.5-15.4-14-24-13.6-8.6 0.5-15 3-19.1 7.7-3.5 3.1-7 3.8-10.6 2.3-5.4-2.3-17.6-3.2-27.9 3.6z" fill="#fff"/>
+<path d="m1545.1-25.7h131c-11.8-15.6-24.7-22.9-38.5-22.2-13.8 0.8-24.1 5-30.8 12.6-5.6 5-11.3 6.3-17 3.8-8.6-3.8-28.2-5.2-44.7 5.8z" fill="#fff"/>
+<path d="m946.9-14.6h-86.5c7.8-10.4 16.3-15.3 25.5-14.8s15.9 3.3 20.3 8.4c3.7 3.4 7.5 4.2 11.2 2.5 5.7-2.5 18.7-3.4 29.5 3.9z" fill="#fff"/>
+<linearGradient id="g" x1="1167.9" x2="1167.9" y1="19.579" y2="19.009" gradientTransform="matrix(46.966 0 0 -75.382 -54158 1472.9)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m678.7-8.4h32.1c4.1 0 7.4 3.3 7.4 7.4v68h-47v-68c0.1-4.1 3.4-7.4 7.5-7.4z" fill="url(#g)"/>
+<linearGradient id="i" x1="1167.9" x2="1167.9" y1="19.791" y2="19.221" gradientTransform="matrix(46.966 0 0 -56.846 -54086 1139.2)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m750.4 10.2h32.1c4.1 0 7.4 3.3 7.4 7.4v49.4h-47v-49.4c0.1-4.1 3.4-7.4 7.5-7.4z" fill="url(#i)"/>
+<linearGradient id="o" x1="1167.9" x2="1167.9" y1="19.579" y2="19.009" gradientTransform="matrix(46.966 0 0 -75.382 -53137 1472.9)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1699.6-8.4h32.1c4.1 0 7.4 3.3 7.4 7.4v68h-47v-68c0.1-4.1 3.4-7.4 7.5-7.4z" fill="url(#o)"/>
+<linearGradient id="n" x1="1165.6" x2="1165.6" y1="19.921" y2="19.35" gradientTransform="matrix(39.55 0 0 -49.431 -45203 1005.8)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m881.4 17.6h29.7c2.7 0 4.9 2.2 4.9 4.9v44.5h-39.6v-44.5c0.1-2.7 2.3-4.9 5-4.9z" fill="url(#n)"/>
+<linearGradient id="m" x1="1167.9" x2="1167.9" y1="19.65" y2="19.08" gradientTransform="matrix(46.966 0 0 -67.968 -53865 1339.4)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m971.6-1h32.1c4.1 0 7.4 3.3 7.4 7.4v60.6h-47v-60.6c0.1-4 3.5-7.4 7.5-7.4z" fill="url(#m)"/>
+<linearGradient id="l" x1="1164" x2="1164" y1="19.48" y2="18.909" gradientTransform="matrix(35.842 0 0 -88.976 -40678 1717.6)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1031-22h26c2.7 0 4.9 2.2 4.9 4.9v84h-35.9v-84c0-2.7 2.2-4.9 5-4.9z" fill="url(#l)"/>
+<linearGradient id="k" x1="1160.6" x2="1160.6" y1="19.83" y2="19.26" gradientTransform="matrix(29.662 0 0 -54.374 -33344 1094.7)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1073 12.6h19.8c2.7 0 4.9 2.2 4.9 4.9v49.5h-29.7v-49.4c0.1-2.8 2.3-5 5-5z" fill="url(#k)"/>
+<linearGradient id="j" x1="1167.9" x2="1167.9" y1="19.581" y2="19.105" gradientTransform="matrix(46.966 0 0 -76.618 -53611 1507.5)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1226.3 2.7h32.1c4.1 0 7.4 2.8 7.4 6.2v57.7h-47v-57.7c0-3.4 3.4-6.2 7.5-6.2z" fill="url(#j)"/>
+<linearGradient id="f" x1="1167.9" x2="1167.9" y1="19.579" y2="19.009" gradientTransform="matrix(46.966 0 0 -75.382 -53464 1472.9)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1373.3-8.4h32.1c4.1 0 7.4 3.3 7.4 7.4v68h-47v-68c0.1-4.1 3.4-7.4 7.5-7.4z" fill="url(#f)"/>
+<linearGradient id="h" x1="1167.9" x2="1167.9" y1="19.791" y2="19.221" gradientTransform="matrix(46.966 0 0 -56.846 -53357 1139.2)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#ECD0D0" offset="0"/>
+	<stop stop-color="#F2DADA" offset="1"/>
+</linearGradient>
+<path d="m1479.6 10.2h32.1c4.1 0 7.4 3.3 7.4 7.4v49.4h-47v-49.4c0.1-4.1 3.4-7.4 7.5-7.4z" fill="url(#h)"/>
+<path d="m589.9 59.2h201.7c3.6 0 6.5-2.9 6.5-6.5s2.9-6.5 6.5-6.5h103.8c4.4 0 7.9 3.6 7.9 8s3.5 8 7.9 8h60.3c8.4 0 16.6-3.1 22.9-8.7 6.4-5.6 14.5-8.7 22.9-8.7h53.8c4.4 0 8.6 2.1 11.3 5.6s6.9 5.6 11.3 5.6h115.6c5.2 0 10.4 0.9 15.3 2.8 4.9 1.8 10.1 2.8 15.3 2.8h91c7.1 0 14.1-1.4 20.6-4.2s13.5-4.2 20.6-4.2h113.6c6.9 0 13.8 0.7 20.5 2.2l16.2 3.5c6.7 1.4 13.6 2.2 20.5 2.2h157.1v5.9h-1123.1v-7.8z" fill="#EFD4D4"/>
+<path d="m1655.1 60.4h200.3c3.6 0 6.4-2.9 6.4-6.5 0-2.4 2.7-4.7 8-6.9v20h-214.8l0.1-6.6z" fill="#EFD4D4"/>
+<rect x="1024.8" y="44.8" width="1.2" height="9.9" fill="#535461"/>
+<rect x="1024.8" y="55.9" width="1.2" height="11.1" fill="#535461"/>
+<rect x="1059.4" y="55.9" width="1.2" height="11.1" fill="#535461"/>
+<rect x="1024.8" y="55.9" width="1.2" height="11.1" fill="#606060"/>
+<rect x="1059.4" y="55.9" width="1.2" height="11.1" fill="#606060"/>
+<rect x="1059.4" y="44.8" width="1.2" height="9.9" fill="#535461"/>
+<rect x="1024.8" y="44.8" width="1.2" height="9.9" fill="#606060"/>
+<rect x="1059.4" y="44.8" width="1.2" height="9.9" fill="#606060"/>
+<rect x="1021.1" y="43.5" width="42" height="2.5" fill="#fff"/>
+<rect x="1021.1" y="47.2" width="42" height="2.5" fill="#fff"/>
+<rect x="1021.1" y="50.9" width="42" height="2.5" fill="#fff"/>
+<rect x="1021.1" y="54.6" width="42" height="3.7" fill="#DBDBDB"/>
+<path d="m807.3 11.4h71.7c2.7 0 4.9 2.2 4.9 4.9v50.7h-81.6v-50.7c0-2.7 2.2-4.9 5-4.9z" fill="#F7F7F7"/>
+<defs>
+	<filter id="t" x="856.7" y="11.4" width="27.2" height="55.6" filterUnits="userSpaceOnUse">
+		<feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask id="e" x="856.7" y="11.4" width="27.2" height="55.6" maskUnits="userSpaceOnUse">
+	<g filter="url(#t)">
+		<path d="m807.3 11.4h71.7c2.7 0 4.9 2.2 4.9 4.9v50.7h-81.6v-50.7c0-2.7 2.2-4.9 5-4.9z" fill="#fff"/>
+	</g>
+</mask>
+<polygon points="856.7 11.4 883.9 11.4 883.9 67 856.7 67" fill="#EFC9C9" mask="url(#e)"/>
+<rect x="814.7" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="827" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="839.4" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="814.7" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="827" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="839.4" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<path d="m1762.6 11.4h71.7c2.7 0 4.9 2.2 4.9 4.9v50.7h-81.6v-50.7c0.1-2.7 2.3-4.9 5-4.9z" fill="#F7F7F7"/>
+<path d="m1812.1 11.4h22.2c2.8 0 5 2.2 5 5v50.6h-27.2v-55.6z" fill="#EFC9C9"/>
+<rect x="1770.1" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1782.4" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1794.8" y="22.5" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1770.1" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1782.4" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1794.8" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<path d="m954.3-28.7v-4.4h2.5v4.4h3.7c1.4 0 2.5 1 2.5 2.2v4.4h16.1c2.7 0 4.9 2 4.9 4.4v84.5h-55.6v-84.5c0-2.4 2.2-4.4 4.9-4.4h7.4v-4.4c0-1.2 1.1-2.2 2.5-2.2h3.7v-4.4h2.5v4.4h4.9z" fill="#F7F7F7"/>
+<defs>
+	<filter id="s" x="927.2" y="-33.1" width="27.2" height="100" filterUnits="userSpaceOnUse">
+		<feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask id="d" x="927.2" y="-33.1" width="27.2" height="100" maskUnits="userSpaceOnUse">
+	<g filter="url(#s)">
+		<path d="m954.3-28.7v-4.4h2.5v4.4h3.7c1.4 0 2.5 1 2.5 2.2v4.4h16.1c2.7 0 4.9 2 4.9 4.4v84.6h-55.6v-84.6c0-2.4 2.2-4.4 4.9-4.4h7.4v-4.4c0-1.2 1.1-2.2 2.5-2.2h3.7v-4.4h2.5v4.4h4.9z" fill="#fff"/>
+	</g>
+</mask>
+<path d="m932.1-33.1h22.2v100h-27.2v-95.6c0.1-2.4 2.3-4.4 5-4.4z" fill="#EFC9C9" mask="url(#d)"/>
+<rect x="961.8" y="-9.6" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="972.9" y="-9.6" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="961.8" y="-1" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="972.9" y="-1" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="961.8" y="7.7" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="972.9" y="7.7" width="4.9" height="2.5" fill="#F3C9CA"/>
+<path d="m1142.2-33.1h5.3l3.7-7.4h27.6l3.7 7.4h5.4c2.7 0 4.9 2.2 4.9 4.9v68.5h12.8l9.4 8.1v18.6h-77.9v-95.2c0.2-2.7 2.4-4.9 5.1-4.9z" fill="#F7F7F7"/>
+<defs>
+	<filter id="r" x="1111.3" y="-41.5" width="53.1" height="108.5" filterUnits="userSpaceOnUse">
+		<feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask id="c" x="1111.3" y="-41.5" width="53.1" height="108.5" maskUnits="userSpaceOnUse">
+	<g filter="url(#r)">
+		<path d="m1142.2-33.1h5.3l3.7-7.4h27.6l3.7 7.4h5.4c2.7 0 4.9 2.2 4.9 4.9v68.5h12.8l9.4 8.1v18.6h-77.9v-95.2c0.2-2.7 2.4-4.9 5.1-4.9z" fill="#fff"/>
+	</g>
+</mask>
+<path d="m1116.3-41.5h48.2v108.5h-53.1v-103.5c-0.1-2.7 2.1-5 4.9-5z" fill="#EFC9C9" mask="url(#c)"/>
+<path d="m1202.2 53.4c1 0 1.9 0.8 1.9 1.9v11.7h-3.7v-11.7c-0.1-1.1 0.7-1.9 1.8-1.9z" fill="#F3C9CA"/>
+<polygon points="1173.1 -17 1192.9 -17 1192.9 -14.6 1173.1 -14.6" fill="#F3C9CA"/>
+<polygon points="1173.1 -9.6 1192.9 -9.6 1192.9 -7.1 1173.1 -7.1" fill="#F3C9CA"/>
+<polygon points="1173.1 -2.2 1192.9 -2.2 1192.9 0.3 1173.1 0.3" fill="#F3C9CA"/>
+<path d="m1121.2-9.6-21.2-0.3c-1.3 0 0.9 0.8 0 1.7l-6.3 6.3c-1.4 1.4-2.2 3.3-2.2 5.2v63.7h37.1v-69.2c0-4.1-3.3-7.4-7.4-7.4z" fill="#F7F7F7"/>
+<path d="m1098.5-9.9h2.9v76.9h-9.9v-69.9c0-3.8 3.2-7 7-7z" fill="#EFC9C9"/>
+<rect x="1107.6" y="6.4" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="1118.7" y="6.4" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="1107.6" y="15.1" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="1118.7" y="15.1" width="4.9" height="2.5" fill="#F3C9CA"/>
+<rect x="903.7" y="34.9" width="1.2" height="32.1" fill="#606060"/>
+<path d="m912.3 39.2c0.1 11.3-7.9 20.4-7.9 20.4s-8.1-9.1-8.1-20.4c-0.1-11.3 7.9-20.4 7.9-20.4s8.1 9.1 8.1 20.4z" fill="#fff"/>
+<rect x="1859.1" y="34.9" width="1.2" height="32.1" fill="#D1D1D1"/>
+<path d="m1867.7 39.2c0.1 11.3-7.9 20.4-7.9 20.4s-8.1-9.1-8.1-20.4 7.9-20.4 7.9-20.4 8.1 9.1 8.1 20.4z" fill="#fff"/>
+<rect x="1275.7" y="34.9" width="1.2" height="32.1" fill="#606060"/>
+<path d="m1284.3 39.2c0.1 11.3-7.9 20.4-7.9 20.4s-8.1-9.1-8.1-20.4 7.9-20.4 7.9-20.4 8.1 9.1 8.1 20.4z" fill="#EFD4D4"/>
+<rect x="1268.3" y="34.9" width="1.2" height="32.1" fill="#606060"/>
+<path d="m1276.9 39.2c0.1 11.3-7.9 20.4-7.9 20.4s-8.1-9.1-8.1-20.4 7.9-20.4 7.9-20.4 8.1 9.1 8.1 20.4z" fill="#fff"/>
+<rect x="1550.1" y="34.9" width="1.2" height="32.1" fill="#606060"/>
+<path d="m1558.7 39.2c0.1 11.3-7.9 20.4-7.9 20.4s-8.1-9.1-8.1-20.4 7.9-20.4 7.9-20.4 8.1 9.1 8.1 20.4z" fill="#fff"/>
+<path d="m1581 15.1h12.3c2.1 0 4 1.4 4.7 3.4l2.3 6.9c0.7 2 2.6 3.4 4.7 3.4h68.7c2.7 0 4.9 2.2 4.9 4.9v33.3h-102.6v-47c0-2.7 2.2-4.9 5-4.9z" fill="#EFC9C9"/>
+<path d="m1602 28.7h73.9c2.2 0 4 1.8 4 4v34.3h-65.5l-12.4-38.3z" fill="#F7F7F7"/>
+<polygon points="1646.9 41 1679.8 41 1679.8 43.5 1647.3 43.5" fill="#F3C9CA"/>
+<polygon points="1648.7 48.5 1679.8 48.5 1679.8 50.9 1649.9 50.9" fill="#F3C9CA"/>
+<polygon points="1650.9 55.9 1679.8 55.9 1679.8 58.3 1651.3 58.3" fill="#F3C9CA"/>
+<path d="m625 15.1h12.3c2.1 0 4 1.4 4.7 3.4l2.3 6.9c0.7 2 2.6 3.4 4.7 3.4h68.7c2.7 0 4.9 2.2 4.9 4.9v33.3h-102.6v-47c0-2.7 2.2-4.9 5-4.9z" fill="#EFC9C9"/>
+<path d="m646 28.7h73.9c2.2 0 4 1.8 4 4v34.3h-65.5l-12.4-38.3z" fill="#F7F7F7"/>
+<polygon points="689.9 41 723.8 41 723.8 43.5 690.3 43.5" fill="#F3C9CA"/>
+<polygon points="691.7 48.5 723.8 48.5 723.8 50.9 692.9 50.9" fill="#F3C9CA"/>
+<polygon points="693.9 55.9 723.8 55.9 723.8 58.3 694.3 58.3" fill="#F3C9CA"/>
+<path d="m1291.8-25.7h17.3l29.4 15.2c2.5 1.3 4 3.8 4 6.6v59.5h8.7c2.7 0 4.9 2.2 4.9 4.9v6.5h-69.2v-87.7c-0.1-2.8 2.1-5 4.9-5z" fill="#F7F7F7"/>
+<defs>
+	<filter id="q" x="1286.8" y="-25.6" width="22.2" height="92.6" filterUnits="userSpaceOnUse">
+		<feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask id="b" x="1286.8" y="-25.6" width="22.2" height="92.6" maskUnits="userSpaceOnUse">
+	<g filter="url(#q)">
+		<path d="m1291.8-25.7h17.3l29.4 15.2c2.5 1.3 4 3.8 4 6.6v59.5h8.7c2.7 0 4.9 2.2 4.9 4.9v6.5h-69.2v-87.7c-0.1-2.8 2.1-5 4.9-5z" fill="#fff"/>
+	</g>
+</mask>
+<path d="m1290.8-25.6h18.2v92.6h-22.2v-88.6c0-2.2 1.8-4 4-4z" fill="#EFC9C9" mask="url(#b)"/>
+<rect x="1320.2" y="2.7" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1330.1" y="2.7" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1320.2" y="18.8" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1330.1" y="18.8" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1320.2" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<rect x="1330.1" y="34.9" width="2.5" height="6.2" fill="#F3C9CA"/>
+<path d="m1403 17.6h84c2.7 0 4.9 2.1 4.9 4.7v44.5h-93.9v-44.5c0-2.6 2.3-4.7 5-4.7z" fill="#F7F7F7"/>
+<defs>
+	<filter id="p" x="1442.5" y="17.6" width="69.2" height="49.4" filterUnits="userSpaceOnUse">
+		<feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask id="a" x="1442.5" y="17.6" width="69.2" height="49.4" maskUnits="userSpaceOnUse">
+	<g filter="url(#p)">
+		<path d="m1403 17.6h84c2.7 0 4.9 2.2 4.9 4.9v47h-93.9v-47c0-2.7 2.3-4.9 5-4.9z" fill="#fff"/>
+	</g>
+</mask>
+<polygon points="1442.5 17.6 1511.8 17.6 1511.8 67 1442.5 67" fill="#EFC9C9" mask="url(#a)"/>
+<path d="m1409.8 33.6c1 0 1.9 0.8 1.9 1.9v31.5h-3.7v-31.5c-0.1-1 0.8-1.9 1.8-1.9z" fill="#F3C9CA"/>
+<path d="m1419.7 33.6c1 0 1.9 0.8 1.9 1.9v31.5h-3.7v-31.5c-0.1-1 0.8-1.9 1.8-1.9z" fill="#F3C9CA"/>
+<path d="m1429.6 33.6c1 0 1.9 0.8 1.9 1.9v31.5h-3.7v-31.5c-0.1-1 0.7-1.9 1.8-1.9z" fill="#F3C9CA"/>
+</svg>

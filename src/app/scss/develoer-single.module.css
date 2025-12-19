@@ -1,0 +1,178 @@
+.swiperCustomControl :global {
+  overflow-y: inherit;
+  overflow-x: clip;
+}
+.swiperCustomControl :global .swiper-button-prev,
+.swiperCustomControl :global .swiper-button-next {
+  top: -1.7rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100vmax;
+  background-color: #fff;
+  border: 1px solid rgba(100, 52, 132, 0.2);
+  box-shadow: 0px 5px 3px 0px rgba(100, 52, 132, 0.45);
+}
+.swiperCustomControl :global .swiper-button-prev:hover,
+.swiperCustomControl :global .swiper-button-next:hover {
+  background-color: #643484;
+  color: #fff;
+}
+.swiperCustomControl :global .swiper-button-prev::after,
+.swiperCustomControl :global .swiper-button-next::after {
+  font-size: var(--swiper-navigation-size)/2;
+  font-weight: var(--font-bold);
+}
+.swiperCustomControl :global .swiper-button-prev {
+  left: inherit;
+  right: 2.7rem;
+}
+.swiperCustomControl :global .swiper-button-next {
+  right: 0.2rem;
+}
+
+.category :global .list, .builder :global .list {
+  position: relative;
+}
+.category :global .list a, .builder :global .list a {
+  color: inherit;
+}
+.category :global .list .thumb, .builder :global .list .thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-theme);
+}
+.category :global .list h5, .builder :global .list h5 {
+  margin-top: 0.9rem;
+}
+.category :global .list ul, .builder :global .list ul {
+  font-size: 0.9rem;
+}
+.category :global .list ul li, .builder :global .list ul li {
+  padding: 0.1rem 0;
+}
+.category :global .list img, .builder :global .list img {
+  height: 280px;
+  border-radius: var(--border-theme);
+  transition: all 0.3s ease;
+}
+.category :global .list:hover img, .builder :global .list:hover img {
+  transform: scale(1.1);
+}
+.category :global .list:hover a:hover, .builder :global .list:hover a:hover {
+  color: #643484;
+}
+
+.category :global .list .price {
+  font-size: 1.2rem;
+  font-weight: var(--font-bold);
+  color: #643484;
+}
+.category :global .list .price span {
+  font-weight: var(--font-bold);
+}
+.category :global .list .price small {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-left: 0.1rem;
+}
+
+/* .main {
+} */
+.bg {
+  position: relative;
+  background-color: rgba(100, 52, 132, 0.1);
+  height: 160px;
+  display: flex;
+  justify-content: flex-end;
+}
+.bg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+  opacity: 0.3;
+}
+
+.builder {
+  position: relative;
+  z-index: 2;
+  margin-top: -3rem;
+  background-color: #fff;
+  border: 1px solid rgba(100, 52, 132, 0.2);
+  border-radius: var(--border-theme);
+  padding: 1rem;
+}
+.builder :global .accordion-item {
+  border: none;
+}
+.builder :global .accordion-item .accordion-body {
+  margin-bottom: 1rem;
+}
+.builder :global .accordion-item .accordion-button {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  width: auto;
+  border: 1px solid rgba(100, 52, 132, 0.2);
+  border-radius: var(--border-theme);
+  padding: 0.3rem;
+}
+.allList {
+  margin-top: 3rem;
+}
+
+.category {
+  padding-top: 2rem;
+  border-bottom: 1px solid rgba(100, 52, 132, 0.2);
+}
+.category h2 {
+  margin-right: 5rem;
+  font-size: calc(var(--heading-font) / 1.2);
+}
+@media (min-width: 768px) {
+  .category h2 {
+    font-size: inherit;
+  }
+}
+.category h5 {
+  font-size: calc(var(--heading-font) / 1.5);
+}
+@media (min-width: 768px) {
+  .category h5 {
+    font-size: inherit;
+  }
+}
+.category :global .list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.category :global .list ul li:not(:first-child) {
+  flex: 1 1 auto;
+}
+.category :global .list ul li:not(:first-child)::before {
+  content: ",";
+  margin-right: 0.5rem;
+}
+.category :global .list img {
+  height: 210px;
+}
+.developers {
+  padding: 2rem 0;
+}
+@media (min-width: 992px) {
+  .developers {
+    padding: 4rem 0;
+  }
+}
+.developers :global .items {
+  border: 1px solid rgba(100, 52, 132, 0.2);
+  padding: 1rem;
+  border-radius: var(--border-theme);
+}
+.developers :global .btn-custom {
+  margin-top: 1.5rem;
+}
+
+.swiperCustomControl {
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=develoer-single.module.css.map */

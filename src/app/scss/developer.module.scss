@@ -1,0 +1,115 @@
+@import "./common/variables";
+@import "./common/mixins";
+.main {
+  margin-top: 5.5rem;
+  h1 {
+    border-bottom: 1px solid rgba($primary, 0.2);
+    padding-bottom: 0.5rem;
+    font-size: var(--heading-font);
+    @include responsive(min768) {
+      font-size: 1.625rem;
+    }
+  }
+}
+
+.bredcrumb {
+  display: none;
+  @include responsive(min768) {
+    display: block;
+  }
+}
+
+.builder {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba($primary, 0.2);
+  padding-bottom: var(--common-space);
+  padding-top: var(--common-space);
+  column-gap: 2rem;
+  max-width: 100%;
+  &__info {
+    padding-bottom: var(--common-space);
+    @include responsive(min768) {
+      flex: 0 0 auto;
+      width: 33.3%;
+    }
+    .logo {
+      border: rgba($primary, 0.2) solid 1px;
+      padding: 0.5rem;
+      display: inline-block;
+      background-color: $white;
+      border-radius: var(--border-theme);
+    }
+  }
+  &__projects {
+    position: relative;
+    max-width: 100%;
+    @include responsive(min768) {
+      flex: 0 0 auto;
+      width: calc(66.6% - 2rem);
+    }
+  }
+  .num-of-properties {
+    margin-bottom: 0.3rem;
+    font-weight: var(--font-medium);
+    color: $primary;
+  }
+  :global {
+    .list {
+      @extend %projectItems;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @include responsive(min640) {
+        flex-wrap: nowrap;
+      }
+      column-gap: 3vw;
+      border: rgba($primary, 0.2) solid 1px;
+      border-radius: var(--border-theme);
+      h5 {
+        font-size: 1rem;
+        @include responsive(min768) {
+          font-size: inherit;
+        }
+      }
+      @include responsive(min768) {
+        border: inherit;
+        display: inherit;
+        column-gap: inherit;
+      }
+      img {
+        width: 100%;
+        @include responsive(min768) {
+          height: 170px;
+        }
+      }
+      &__info {
+        width: 100%;
+        padding: 0 var(--common-space) calc(var(--common-space) / 1.5);
+        @include responsive(min768) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .swiperCustomControl {
+    :global {
+      @extend %next-prev-decoration;
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 50%;
+      }
+      .swiper-button-next {
+        right: -10px;
+      }
+      .swiper-button-prev {
+        left: -10px;
+      }
+    }
+  }
+}
+
+.paginationcontent {
+  margin-top: 2rem;
+}

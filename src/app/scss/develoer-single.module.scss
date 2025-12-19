@@ -1,0 +1,134 @@
+@import "./common/variables";
+@import "./common/mixins";
+
+.bg {
+  position: relative;
+  background-color: rgba($primary, 0.1);
+  height: 160px;
+  display: flex;
+  justify-content: flex-end;
+  img {
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: 0.3;
+  }
+}
+
+.builder {
+  position: relative;
+  z-index: 2;
+  margin-top: -3rem;
+  background-color: $white;
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: var(--border-theme);
+  padding: 1rem;
+  :global {
+    .accordion-item {
+      border: none;
+      .accordion-body {
+        margin-bottom: 1rem;
+        padding-top: 0;
+      }
+      .accordion-button {
+        column-gap: 0.5rem;
+        width: auto;
+        border: 1px solid rgba($primary, 0.2);
+        border-radius: var(--border-theme);
+        padding: 0.3rem;
+      }
+    }
+    .list {
+      @extend %projectItems;
+    }
+  }
+}
+
+.swiperCustomControl {
+  margin-bottom: 2rem;
+  :global {
+    @extend %next-prev-decoration;
+  }
+}
+
+.allList {
+  margin-top: 3rem;
+}
+
+.category {
+  @extend .swiperCustomControl;
+  h2,
+  .h2 {
+    margin-right: 5rem;
+    font-size: calc(var(--heading-font) * 1);
+    // font-size: ;
+    padding-bottom: 0.5rem;
+    @include responsive(min640) {
+      font-size: 1.5rem;
+    }
+  }
+  h5 {
+    font-size: calc(var(--heading-font) / 1.5);
+    @include responsive(min768) {
+      font-size: inherit;
+    }
+  }
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($primary, 0.2);
+  :global {
+    .swiper {
+      overflow: visible;
+    }
+    .list {
+      @extend %projectItems;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        // column-gap: 0.5rem;
+        li {
+          &:not(:first-child) {
+            flex: 1 1 auto;
+            &::before {
+              content: ",";
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+      img {
+        height: 210px;
+      }
+      .price {
+        @extend %price;
+      }
+    }
+  }
+}
+
+.developers {
+  // @extend %homeBased;
+  padding: 2rem 0;
+  @include responsive(min992) {
+    padding: 4rem 0;
+  }
+
+  :global {
+    .swiper-slide {
+      width: 200px;
+      @include responsive(min640) {
+        width: inherit;
+      }
+    }
+    .items {
+      border: 1px solid rgba($primary, 0.2);
+      text-align: center;
+      padding: 1rem;
+      border-radius: var(--border-theme);
+      img {
+        height: 45px;
+      }
+    }
+    .btn-custom {
+      margin-top: 1.5rem;
+    }
+  }
+}
