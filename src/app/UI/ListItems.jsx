@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/pro-regular-svg-icons";
 export default function FeatureProjectList({ itemObj }) {
+
    return (
       <figure className="list">
          <div className="thumb">

@@ -37,9 +37,9 @@ export default function ProjectByCondition({ itemObj, page, currentpage, columnn
                },
                body: formData,
             });   
-            const result = await finalresult.json();
-            if (!Array.isArray(result.projectbyconn) || result.projectbyconn.length === 0) {
-               router.push('https://www.hcorealestates.com/property/'+itemObj.urlval);
+           const result = await finalresult.json();
+           if (!Array.isArray(result.projectbyconn) || result.projectbyconn.length === 0) {
+               router.push('https://www.hcorealestates.com/project');
             }
            setProperties(result.projectbyconn);
            setMessage(result.message);
@@ -53,7 +53,7 @@ export default function ProjectByCondition({ itemObj, page, currentpage, columnn
          }
       };
       fetchData();
-   }, [router]);
+   }, [router, bedObj, devObj, maxObj, minObj, ptypeObj, page, sortObj, columnname, itemObj.id, itemObj.urlval]);
    return ( 
       <> 
          {loading ? (<LoadingCustom />) : (<div>

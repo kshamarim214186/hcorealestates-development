@@ -42,7 +42,7 @@ export default function FloorPlan({ itemObj, propId, projectName }) {
       return () => {
 
       };
-   }, []);
+   }, [propId, itemObj.id]);
 
    const propertyFloor = propFloor.floorplan;
    return (

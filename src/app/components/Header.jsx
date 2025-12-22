@@ -34,9 +34,9 @@ export default function Header({ resultHeader, commercialData, residentialData, 
     });
   };
 
-  const specificResidentail = ["Gurgaon", "New Delhi", "Noida", "Pune"];
+  const specificResidentail = pageData.specificRes;
   const sortedResidential = sortBySpecific(residentialData, specificResidentail);
-  const specificDev = ["Anant Raj Group", "DLF Limited", "Emaar India", "Godrej Properties"];
+  const specificDev = pageData.specificDeveloper;
   const sortedDev = sortBySpecific(builderData, specificDev);
 
   return (

@@ -35,7 +35,7 @@ export default function Specification({ itemObj, propId }) {
       return () => {
 
       };
-   }, []);
+   }, [propId, itemObj.specicatid]);
    const propertySpeci = propSpecification.specification;
    
    return (

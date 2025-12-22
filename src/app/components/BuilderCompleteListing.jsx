@@ -51,7 +51,7 @@ export default function BuilderCompleteListing() {
          }
       };
       fetchData();
-   }, []);
+   }, [page]);
    return ( 
       <> 
          {loading ? (

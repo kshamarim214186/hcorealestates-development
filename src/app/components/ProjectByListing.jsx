@@ -59,7 +59,7 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
          setNumberofpage(Math.ceil(result.totalrecords / result.perpagerecord))
          setLoading(false)
       })
-   }, [router]);
+   }, [router, bedObj, devObj, maxObj, minObj, ptypeObj, page, sortObj]);
    return ( 
       <> 
          <div className="row">

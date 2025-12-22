@@ -107,26 +107,26 @@ export default function HomePage({ result }) {
                              <Image src={item.property_image} className="img-fluid w-100" alt={item.name} width={636} height={405} />
                            </div>
                            <figcaption>
-                             <div>
-                               <h4>{item.name}</h4>
-                               <ul>
-                                 <li><FontAwesomeIcon icon={faLocationDot} /> {item.locationname}</li>
-                                 <li><FontAwesomeIcon icon={faRulerCombined} /> {item.propbhk}</li>
-                                 <li><FontAwesomeIcon icon={faCity} /> {item.propertysubtypename}</li>
-                               </ul>
-                               <div className="price">
-                                 {item.locationname === 'Dubai' ? (
-                                    <span>{item.price}</span>
-                                 ) : (
-                                 <span>
-                                    <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{item.price}</span>
-                                 </span>
-                                 )}
-                               </div>
-                             </div>
-                             <Link href={item.url} className={`${styles.viewProjects} stretched-link`}>
-                               <FontAwesomeIcon icon={faChevronRight} />
-                             </Link>
+                              <div>
+                                 <h4>{item.name}</h4>
+                                 <ul>
+                                    <li><FontAwesomeIcon icon={faLocationDot} /> {item.locationname}</li>
+                                    <li><FontAwesomeIcon icon={faRulerCombined} /> {item.propbhk}</li>
+                                    <li><FontAwesomeIcon icon={faCity} /> {item.propertysubtypename}</li>
+                                 </ul>
+                                 <div className="price">
+                                    {item.locationname === 'Dubai' ? (
+                                       <span>{item.price}</span>
+                                    ) : (
+                                    <span>
+                                       <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{item.price}</span>
+                                    </span>
+                                    )}
+                                 </div>
+                              </div>
+                              <Link href={item.url} className={`${styles.viewProjects} stretched-link`}>
+                                 <FontAwesomeIcon icon={faChevronRight} />
+                              </Link>
                            </figcaption>
                         </figure>
                      </SwiperSlide>

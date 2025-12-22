@@ -37,7 +37,7 @@ export default function ProjectByBuilder({ itemObj, pageType }) {
          }
       };
       fetchData();
-   }, []);
+   }, [pageType, itemObj.id]);
 
    return ( 
       <>

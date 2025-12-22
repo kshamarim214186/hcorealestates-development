@@ -32,7 +32,7 @@ export default function BuildersProjectByConn({ itemObj }) {
          }
       };
       fetchData();
-   }, [router]);
+   }, [router, itemObj]);
 
    
    return ( 

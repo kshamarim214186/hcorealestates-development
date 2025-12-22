@@ -33,7 +33,7 @@ export default function PostPage({ itemObj, pageData }) {
       if (trk) {
          router.push(itemObj.singlepost.url,301);
       }
-   }, [trk]);
+   }, [trk, router, itemObj.singlepost.url]);
    
    const postData = itemObj.allpost;
    const message = itemObj.message;
