@@ -1,5 +1,5 @@
 "use client";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react';
 import ListItems from "../UI/ListItems";
 import styles from "../scss/properties.module.scss";
@@ -27,6 +27,7 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
    const [perpagerecord, setPerpagerecord] = useState('');
    const [number_of_page, setNumberofpage] = useState('');
    const [loading, setLoading] = useState(true);
+   const router = useRouter()
    useEffect(() => {
       const formData = new URLSearchParams();
       formData.append('token1', process.env.token1);
@@ -48,6 +49,9 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
       })
       .then((res) => res.json())
       .then((result) => {
+         if (!Array.isArray(result.propertydata) || result.propertydata.length === 0) {
+          router.push('https://www.hcorealestates.com/project');
+         }
          setProperties(result.propertydata);
          setMessage(result.message);
          setTotalrecords(result.totalrecords);
@@ -55,7 +59,7 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
          setNumberofpage(Math.ceil(result.totalrecords / result.perpagerecord))
          setLoading(false)
       })
-   }, []);
+   }, [router]);
    return ( 
       <> 
          <div className="row">

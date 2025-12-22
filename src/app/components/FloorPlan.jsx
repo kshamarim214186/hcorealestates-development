@@ -67,9 +67,17 @@ export default function FloorPlan({ itemObj, propId, projectName }) {
                            { propfloorplan.price &&
                               <li>
                                  Prices
-                                 <span>
-                                   <FontAwesomeIcon icon={faIndianRupeeSign} /> {propfloorplan.price}
-                                 </span>
+                                 {propfloorplan.locationname === 'Dubai' ? (
+                                    <span>
+                                       {propfloorplan.price}
+                                    </span>
+                                 ) : (
+                                    <>
+                                       <span>
+                                          <FontAwesomeIcon icon={faIndianRupeeSign} /> {propfloorplan.price}
+                                       </span>
+                                    </>
+                                 )}
                               </li>
                            }
                         </ul>

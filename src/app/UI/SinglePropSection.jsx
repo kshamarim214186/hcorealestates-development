@@ -15,10 +15,16 @@ export default function SinglePropSection({ itemObj }) {
             <ul>
                {itemObj.propbhk && <li>{itemObj.propbhk}</li>}
                {(itemObj.locationname && itemObj.propsector && itemObj.locationUrl) && <li><Link href={itemObj.locationUrl}>{itemObj.propsector}, {itemObj.locationname}</Link></li>}
-               {/* {itemObj.propertysubtypename && <li>{itemObj.propertysubtypename}</li>} */}
+               
             </ul>
             <div className="price">
-               <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{itemObj.price}</span>{!isNaN(itemObj.price) && <small>Cr.*</small>}
+               {itemObj.locationname === 'Dubai' ? (
+                  <span>{itemObj.price}</span>
+               ) : (
+               <>
+                  <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{itemObj.price}</span>{!isNaN(itemObj.price) && <small>Cr.*</small>}
+               </>
+               )}
             </div>
          </figcaption>
       </figure>

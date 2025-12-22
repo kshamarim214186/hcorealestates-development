@@ -124,8 +124,14 @@ export default function ProjectPage({ itemObj }) {
                            <li>
                               Prices
                               <div className="price">
-                                 <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{propData.price}</span>
-                                 {!isNaN(propData.price) && <small>Cr.*</small>}
+                                 {propData.locationname === 'Dubai' ? (
+                                    <span>{!isNaN(propData.price) && AED} {propData.price}</span>
+                                 ) : (
+                                    <>
+                                       <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{propData.price}</span>
+                                       {!isNaN(propData.price) && <small>Cr.*</small>}
+                                    </>
+                                 )}
                               </div>
                            </li>
                         }
@@ -138,9 +144,17 @@ export default function ProjectPage({ itemObj }) {
                         {propData.bookingamount && 
                         <li>
                            Booking Amt.
-                           <span>
-                             <FontAwesomeIcon icon={faIndianRupeeSign} /> {propData.bookingamount}
-                           </span>
+                           {propData.locationname === 'Dubai' ? (
+                              <span>
+                                 {propData.price}
+                              </span>
+                           ) : (
+                              <>
+                                 <span>
+                                    <FontAwesomeIcon icon={faIndianRupeeSign} /> {propData.bookingamount}
+                                 </span>
+                              </>
+                           )}
                         </li>
                         }
                      </ul>

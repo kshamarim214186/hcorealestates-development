@@ -37,7 +37,10 @@ export default function ProjectByCondition({ itemObj, page, currentpage, columnn
                },
                body: formData,
             });   
-           const result = await finalresult.json();
+            const result = await finalresult.json();
+            if (!Array.isArray(result.projectbyconn) || result.projectbyconn.length === 0) {
+               router.push('https://www.hcorealestates.com/property/'+currentpage);
+            }
            setProperties(result.projectbyconn);
            setMessage(result.message);
            setTotalrecords(result.totalrecords);

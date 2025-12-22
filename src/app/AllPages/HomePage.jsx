@@ -115,7 +115,13 @@ export default function HomePage({ result }) {
                                  <li><FontAwesomeIcon icon={faCity} /> {item.propertysubtypename}</li>
                                </ul>
                                <div className="price">
-                                 <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{item.price}</span>
+                                 {item.locationname === 'Dubai' ? (
+                                    <span>{item.price}</span>
+                                 ) : (
+                                 <span>
+                                    <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{item.price}</span>
+                                 </span>
+                                 )}
                                </div>
                              </div>
                              <Link href={item.url} className={`${styles.viewProjects} stretched-link`}>
