@@ -39,7 +39,7 @@ export default function ProjectByCondition({ itemObj, page, currentpage, columnn
             });   
             const result = await finalresult.json();
             if (!Array.isArray(result.projectbyconn) || result.projectbyconn.length === 0) {
-               router.push('https://www.hcorealestates.com/property/'+currentpage);
+               router.push('https://www.hcorealestates.com/property/'+itemObj.urlval);
             }
            setProperties(result.projectbyconn);
            setMessage(result.message);
