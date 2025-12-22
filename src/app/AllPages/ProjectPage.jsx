@@ -146,7 +146,7 @@ export default function ProjectPage({ itemObj }) {
                            Booking Amt.
                            {propData.locationname === 'Dubai' ? (
                               <span>
-                                 {propData.price}
+                                 {propData.bookingamount}
                               </span>
                            ) : (
                               <>
