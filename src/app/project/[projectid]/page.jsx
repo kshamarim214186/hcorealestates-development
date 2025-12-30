@@ -22,7 +22,7 @@ export default async function Page({ params }) {
    const commData = await commercial;
    const commercialData = commData.loctype;
    
-   const properties = getProjectDetails(params.projectid);
+   const properties = getProjectDetails(params.projectid,viewerCountry);
    const resultProp = await properties;
    const prop = resultProp.prop;
    const pageName = 'project';
@@ -32,13 +32,12 @@ export default async function Page({ params }) {
       {is404 === 'yes' && <FourZeroFourContent />}
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} fixedTop="nottrue" ctoc={prop.propcallnumber} />
          <ProjectPage itemObj={resultProp} />
-         <p>{viewerCountry} Kshama</p>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
 }
 
-async function getProjectDetails(projectid) {
+async function getProjectDetails(projectid,viewerCountry) {
    const formData = new URLSearchParams();
    formData.append('propurl', projectid);
    formData.append('token1', process.env.token1);
