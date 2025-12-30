@@ -7,14 +7,8 @@ import getLocationType from "@/app/api/getLocationType";
 import FourZeroFourContent from "@/app/components/four-zero-four";
 
 export default async function Page({ params }) {
-
    const h = headers();
-
-   const country =
-    h.get("cloudfront-viewer-country") ||
-    h.get("x-vercel-ip-country") ||
-    "IN";
-
+   const viewerCountry = h.get("cloudfront-viewer-country") || h.get("x-vercel-ip-country") || "IN";
 
    const props = getHomeCompleteData();
    const result = await props;
@@ -33,13 +27,12 @@ export default async function Page({ params }) {
    const prop = resultProp.prop;
    const pageName = 'project';
    const is404 = prop.is404;
-   console.log(country+" Kshama");
    return (
       <>
       {is404 === 'yes' && <FourZeroFourContent />}
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} fixedTop="nottrue" ctoc={prop.propcallnumber} />
          <ProjectPage itemObj={resultProp} />
-         <p>{country} Kshama</p>
+         <p>{viewerCountry} Kshama</p>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
@@ -50,6 +43,7 @@ async function getProjectDetails(projectid) {
    formData.append('propurl', projectid);
    formData.append('token1', process.env.token1);
    formData.append('token2', process.env.token2);
+   formData.append('viewercountry', viewerCountry);
    const finalresult = await fetch(process.env.API_URL+'properties/', {
       method: 'POST',
       headers: {
