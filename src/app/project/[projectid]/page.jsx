@@ -39,6 +39,7 @@ export default async function Page({ params }) {
       {is404 === 'yes' && <FourZeroFourContent />}
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} fixedTop="nottrue" ctoc={prop.propcallnumber} />
          <ProjectPage itemObj={resultProp} />
+         <p>{country} Kshama</p>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
