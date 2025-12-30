@@ -124,7 +124,7 @@ export default function ContactUsMain({ itempageData, resultOtherPage }) {
                       <Nav.Item>
                         <Nav.Link eventKey="office3">
                           <div className="office_heading">Dubai Office :</div>
-                          <span dangerouslySetInnerHTML={{ __html: otherPageData.ngoffice }}></span>
+                          <span dangerouslySetInnerHTML={{ __html: otherPageData.dubaioffice }}></span>
                         </Nav.Link>
                       </Nav.Item>
                     )}
@@ -153,7 +153,7 @@ export default function ContactUsMain({ itempageData, resultOtherPage }) {
                     {otherPageData.ngofficeiframe && (
                       <Tab.Pane eventKey="office3">
                         <iframe
-                          src={otherPageData.ngofficeiframe}
+                          src={otherPageData.dubaiofficeiframe}
                           width="100%"
                           height="450"
                           allowFullScreen=""

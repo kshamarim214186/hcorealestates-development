@@ -23,12 +23,13 @@ export default async function Page({ params }) {
    const prop = resultProp.prop;
    const pageName = 'project';
    const is404 = prop.is404;
-
+   console.log(result.userCountry);
    return (
       <>
       {is404 === 'yes' && <FourZeroFourContent />}
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} fixedTop="nottrue" ctoc={prop.propcallnumber} />
          <ProjectPage itemObj={resultProp} />
+         <p>{result.userCountry} Kshama</p>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
