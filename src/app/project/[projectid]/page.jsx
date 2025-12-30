@@ -7,8 +7,15 @@ import getLocationType from "@/app/api/getLocationType";
 import FourZeroFourContent from "@/app/components/four-zero-four";
 
 export default async function Page({ params }) {
-    const headerList = headers();
-  const country = headerList.get("cloudfront-viewer-country");
+
+   const h = headers();
+
+   const country =
+    h.get("cloudfront-viewer-country") ||
+    h.get("x-vercel-ip-country") ||
+    "IN";
+
+
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -32,7 +39,6 @@ export default async function Page({ params }) {
       {is404 === 'yes' && <FourZeroFourContent />}
       <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} fixedTop="nottrue" ctoc={prop.propcallnumber} />
          <ProjectPage itemObj={resultProp} />
-         <p>{result.userCountry} Kshama</p>
       <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={prop.propname} ctoc={prop.propcallnumber} whatsApp={prop.propwhatsapp} />
       </>
    );
