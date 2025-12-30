@@ -450,20 +450,6 @@ p {
       font-size: 1.1rem;
       font-weight: var(--font-bold);
     }
-    ul {
-      li {
-        padding-top: 0.9rem;
-        padding-bottom: 0.9rem;
-        display: flex;
-        column-gap: 0.9rem;
-        svg {
-          font-size: 1.5rem;
-        }
-        &:not(:last-child) {
-          border-bottom: 1px solid rgba($body-color, 0.15);
-        }
-      }
-    }
   }
 }
 

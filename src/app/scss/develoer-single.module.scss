@@ -1,5 +1,5 @@
-@import "./common/variables";
-@import "./common/mixins";
+@import './common/variables';
+@import './common/mixins';
 
 .bg {
   position: relative;
@@ -21,13 +21,13 @@
   background-color: $white;
   border: 1px solid rgba($primary, 0.2);
   border-radius: var(--border-theme);
-  padding: 1rem;
+  padding: var(--common-space);
+  // padding: 1rem;
   :global {
     .accordion-item {
       border: none;
       .accordion-body {
-        margin-bottom: 1rem;
-        padding-top: 0;
+        padding: 0;
       }
       .accordion-button {
         column-gap: 0.5rem;
@@ -40,6 +40,14 @@
     .list {
       @extend %projectItems;
     }
+  }
+  ul {
+    padding-left: 1rem;
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -88,7 +96,7 @@
           &:not(:first-child) {
             flex: 1 1 auto;
             &::before {
-              content: ",";
+              content: ',';
               margin-right: 0.5rem;
             }
           }

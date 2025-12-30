@@ -237,7 +237,7 @@ export default function ProjectPage({ itemObj }) {
                               <h2 className={styles.headings}>{propData.overviewheading}</h2>
                               <p>{propData.smalldesc}</p>
 
-                              <MoreOverview itemObj={propData.overview} />
+                              <MoreOverview className={styles.description__modal} itemObj={propData.overview} />
                            </div>
                         }
 
@@ -287,26 +287,36 @@ export default function ProjectPage({ itemObj }) {
                            </div>
                         }
 
-                        {amenitiesData.length > 0 &&
+                        {amenitiesData.length > 0 && (
                            <div className={styles.amenities}>
                               <h3 className={styles.headings}>
-                                <small>Amenities of </small>{propData.propname}
+                                 <small>Amenities of </small>
+                                 {propData.propname}
                               </h3>
-                              <ul>
-                                 {amenitiesData.map(function(data,idx) {
-                                    if (idx <= 5) {
-                                       return (
-                                          <li key={data.id}>
-                                             <FontAwesomeIcon icon={`fa-regular ${data.iconid}`} /> {data.name}
-                                          </li>
-                                       )
-                                    }
-                                 })}                     
-                              </ul>
-                              
-                              <MoreAmenities itemObj={amenitiesData} />
+                              <div className={styles.amenities__list}>
+                                 {amenitiesData.map(function (data, idx) {
+                                 if (idx <= 5) {
+                                    return (
+                                       <div className={styles.amenities__item} key={data.id}>
+                                       <FontAwesomeIcon icon={`fa-regular ${data.iconid}`} /> {data.name}
+                                       </div>
+                                    );
+                                 }
+                                 })}
+                              </div>
+
+                              <MoreAmenities>
+                                 <h3>Amenties</h3>
+                                 {amenitiesData.map(function (data) {
+                                 return (
+                                    <div className={styles.amenities__restItem} key={data.id}>
+                                       <FontAwesomeIcon icon={`fa-regular ${data.iconid}`} /> {data.name}
+                                    </div>
+                                 );
+                                 })}
+                              </MoreAmenities>
                            </div>
-                        }
+                        )}
 
                         {specategory.length > 0 &&
                            <div className={styles.specifications}>
