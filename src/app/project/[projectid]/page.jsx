@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import Header from "@/app/components/Header";
 import ProjectPage from "@/app/AllPages/ProjectPage";
 import Footer from "@/app/components/Footer";
@@ -6,6 +7,8 @@ import getLocationType from "@/app/api/getLocationType";
 import FourZeroFourContent from "@/app/components/four-zero-four";
 
 export default async function Page({ params }) {
+    const headerList = headers();
+  const country = headerList.get("cloudfront-viewer-country");
    const props = getHomeCompleteData();
    const result = await props;
 
@@ -23,7 +26,7 @@ export default async function Page({ params }) {
    const prop = resultProp.prop;
    const pageName = 'project';
    const is404 = prop.is404;
-   console.log(result.userCountry);
+   console.log(country+" Kshama");
    return (
       <>
       {is404 === 'yes' && <FourZeroFourContent />}
