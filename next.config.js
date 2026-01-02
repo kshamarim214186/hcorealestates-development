@@ -7,11 +7,24 @@ module.exports = nextConfig;
 
 const path = require("path");
 module.exports = {
-   env: {
+    env: {
       API_URL: 'https://www.api.hcorealestates.com/',
       token1: 'test',
       token2: 'test1',
-   },
+    },
+    async headers() {
+      return [
+        {
+          source: "/_next/static/:path*",
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "public, max-age=31536000, immutable",
+            },
+          ],
+        },
+      ];
+    },
    async redirects() {
       return [
          {
