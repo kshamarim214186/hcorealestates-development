@@ -27,6 +27,7 @@ export default async function Page({ params }) {
    const prop = resultProp.prop;
    const pageName = 'project';
    const is404 = prop.is404;
+
    return (
       <>
       {is404 === 'yes' && <FourZeroFourContent />}

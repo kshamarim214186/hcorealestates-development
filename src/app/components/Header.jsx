@@ -24,7 +24,6 @@ export default function Header({ resultHeader, commercialData, residentialData, 
   const [menuItem, setMenuItem] = useState(false);
   const clicktocall = (fixedTop != 'undefined' && fixedTop == 'nottrue') ? ctoc : pageData.callnumber;
 
-
   const sortBySpecific = (arr, order) => {
     const orderMap = new Map(order.map((item, index) => [item, index]));
     return arr.slice().sort((a, b) => {

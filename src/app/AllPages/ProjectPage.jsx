@@ -236,7 +236,7 @@ export default function ProjectPage({ itemObj }) {
                            <div className={styles.description}>
                               <h2 className={styles.headings}>{propData.overviewheading}</h2>
                               <p>{propData.smalldesc}</p>
-
+                              <TextComponent className={styles.description__moreContent} itemObj={propData.overview} />
                               <MoreOverview className={styles.description__modal} itemObj={propData.overview} />
                            </div>
                         }

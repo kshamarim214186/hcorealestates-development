@@ -452,6 +452,10 @@
   @include responsive(min768) {
     padding: var(--common-space-xl) 0;
   }
+  &__moreContent {
+    max-height: 0;
+    overflow: hidden;
+  }
   &__modal {
     // border: green solid 1px;
     p {
