@@ -46,8 +46,8 @@ export default function Footer({ resultFooter, commercialData, residentialData, 
   const blogcategory = resultFooter.blogcatdetail;
   const buttontext = 'Enquire Now';
 
-  const clicktocall = (pageName != 'undefined' && pageName == 'project' && projectName != 'Hco Real Estates') ? ctoc : pageData.callnumber;
-  const whatsapnum = (pageName != 'undefined' && pageName == 'project' && projectName != 'Hco Real Estates') ? whatsApp : pageData.whatsnumber;
+  const clicktocall = ctoc ? ctoc : pageData.callnumber;
+  const whatsapnum = whatsApp ? whatsApp : pageData.whatsnumber;
   const whatsappUrl = whatsapnum ? "https://api.whatsapp.com/send?phone=" + whatsapnum.replace(" ", "") + "&text=Hi%20I'm%20interested%20in%20" + projectName + "."
     : "";
 

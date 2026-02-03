@@ -7,54 +7,54 @@ export default function SocialMedia({ itemObj }) {
     <>
       <ul className="social">
         <li>
-         {itemObj.facebook &&
+         {itemObj.facebook && (
             <Link href={itemObj.facebook}>
                <span>Facebook</span>
-               <FontAwesomeIcon icon={faFacebook} />
+               <FontAwesomeIcon icon={faFacebook} target="_blank" />
             </Link>
-         }
-         {itemObj.facebook &&
+         )}
+         {itemObj.facebook && (
             <Link href={itemObj.twitter}>
                <span>Twitter</span>
-               <FontAwesomeIcon icon={faTwitter} />
+               <FontAwesomeIcon icon={faTwitter} target="_blank" />
             </Link>
-         }
-         {itemObj.faPinterest &&
+         )}
+         {itemObj.faPinterest && (
             <Link href={itemObj.pintrest}>
                <span>Pinterest</span>
-               <FontAwesomeIcon icon={faPinterest} />
+               <FontAwesomeIcon icon={faPinterest} target="_blank" />
             </Link>
-         }
-         {itemObj.linkedin &&
+         )}
+         {itemObj.linkedin && (
             <Link href={itemObj.linkedin}>
                <span>Linkedin</span>
-               <FontAwesomeIcon icon={faLinkedin} />
+               <FontAwesomeIcon icon={faLinkedin} target="_blank" />
              </Link>
-         }
-         {itemObj.youtube &&
+         )}
+         {itemObj.youtube && (
             <Link href={itemObj.youtube}>
                <span>Youtube</span>
-               <FontAwesomeIcon icon={faYoutube} />
+               <FontAwesomeIcon icon={faYoutube} target="_blank" />
             </Link>
-         }
-         {itemObj.insta &&
+         )}
+         {itemObj.insta && (
             <Link href={itemObj.insta}>
                <span>Instagram</span>
-               <FontAwesomeIcon icon={faInstagram} />
+               <FontAwesomeIcon icon={faInstagram} target="_blank" />
             </Link>
-         }
-         {itemObj.whatsapp &&
+         )}
+         {itemObj.whatsapp && (
             <Link href={itemObj.whatsapp}>
                <span>Whatsapp</span>
-               <FontAwesomeIcon icon={faWhatsapp} />
+               <FontAwesomeIcon icon={faWhatsapp} target="_blank" />
             </Link>
-         }
-         {itemObj.telegram &&
+         )}
+         {itemObj.telegram && (
             <Link href={itemObj.telegram}>
                <span>Telegram</span>
-               <FontAwesomeIcon icon={faTelegram} />
+               <FontAwesomeIcon icon={faTelegram} target="_blank" />
             </Link>
-         }
+         )}
         </li>
       </ul>
     </>

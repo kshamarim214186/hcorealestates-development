@@ -14,7 +14,9 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
    return (
       <html lang="en">
-         <body className={poppins.className}>            
+         <body className={poppins.className}>
+            <GoogleAnalytics gaId="GTM-WD35W8" />
+            <meta name="google-site-verification" content="rWtL9hQf-gpxyoIE1v-geqw2l62Omf1MzTl4gCqNqGg" />
             {children}
          </body>
       </html>

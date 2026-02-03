@@ -29,9 +29,9 @@ export default async function SingleDeveloper({ params: { singledevloper } }) {
    return (
       <>
          {is404 === 'yes' && <FourZeroFourContent />}
-         <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
+         <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} ctoc={resultBuilders.builder.callnumber} />
             <DeveloperSingle itemObj={resultBuilders} />
-         <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
+         <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} ctoc={resultBuilders.builder.callnumber} whatsApp={resultBuilders.builder.whatsnumber} />
       </>
    );
 }

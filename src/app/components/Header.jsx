@@ -22,7 +22,7 @@ export default function Header({ resultHeader, commercialData, residentialData, 
   const pageData = resultHeader.pagedata;
   const [open, setOpen] = useState(false);
   const [menuItem, setMenuItem] = useState(false);
-  const clicktocall = (fixedTop != 'undefined' && fixedTop == 'nottrue') ? ctoc : pageData.callnumber;
+  const clicktocall = ctoc ? ctoc : pageData.callnumber;
 
   const sortBySpecific = (arr, order) => {
     const orderMap = new Map(order.map((item, index) => [item, index]));

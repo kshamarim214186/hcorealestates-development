@@ -33,7 +33,7 @@ export default async function Page({ params: { locationurl, sector } }) {
    const projectName = 'Hco Real Estates';
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
+      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} ctoc={finalresult.callnumber} />
       {message=='success' ?
          <main className={`${styles.container} container-xl`}>
             <title>{finalresult.seotitle}</title>
@@ -45,7 +45,7 @@ export default async function Page({ params: { locationurl, sector } }) {
          </main>: 
          <NotFound />
       }
-      <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
+      <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} ctoc={finalresult.callnumber} whatsApp={finalresult.whatsnumber} />
       </>
    );
 }

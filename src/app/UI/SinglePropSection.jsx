@@ -7,7 +7,7 @@ export default function SinglePropSection({ itemObj }) {
    return (
       <figure className="list">
          <div className="thumb">
-            <Image src={itemObj.property_image} className="img-fluid w-100" alt={itemObj.property_image_alt_tag} width="360" height="405" />
+            <Image src={itemObj.property_image} className="img-fluid w-100" alt={itemObj.property_image_alt_tag} width="360" height="280" />
            {itemObj.isOffer && <div className='offers'>Offers</div>}
          </div>
          <figcaption className="list__info">

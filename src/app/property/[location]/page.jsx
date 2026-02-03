@@ -32,7 +32,7 @@ export default async function PropertyLocation({ params: { location } }) {
    const projectName = 'Hco Real Estates';
    return (
       <>
-      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
+      <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} ctoc={finalresult.callnumber} />
       {locationResult.message=='success' ?
          <main className={`${styles.container} container-xl`}>
             <title>{finalresult.seotitle}</title>
@@ -44,7 +44,7 @@ export default async function PropertyLocation({ params: { location } }) {
          </main>: 
          <NotFound />
       }
-      <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
+      <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} ctoc={finalresult.callnumber} whatsApp={finalresult.whatsnumber} />
       </>
    );
 }
