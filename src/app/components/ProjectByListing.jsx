@@ -39,6 +39,7 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
       formData.append('propertytype', ptypeObj);
       formData.append('pricemin', minObj);
       formData.append('pricemax', maxObj);
+      formData.append('pageName', pageName);
       fetch(process.env.API_URL+'properties/getAllPropertiesData/', {
          method: 'POST',
          cache: 'force-cache',
