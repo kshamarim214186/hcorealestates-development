@@ -2,7 +2,7 @@ import { faIndianRupeeSign } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import DirhamIcon from './DirhamIcon/DirhamIcon';
+import DirhamIcon from './DirhamIcon';
 import styles from './PropertyCard.module.scss';
 
 export default function PropertyCard({ property }) {
