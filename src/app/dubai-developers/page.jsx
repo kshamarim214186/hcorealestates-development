@@ -24,9 +24,9 @@ export default async function DubaiDevelopers() {
    const projectName = 'Hco Real Estates';
    return (
       <>
-         <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} />
+         <Header resultHeader={result} commercialData={commercialData} residentialData={residentialData} ctoc={result.pagedata.dubaicall} />
             <DubaiBuilderListing pageData={result.pagedata} />
-         <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} />
+         <Footer resultFooter={result} commercialData={commercialData} residentialData={residentialData} pageName={pageName} projectName={projectName} ctoc={result.pagedata.dubaicall} whatsApp={result.pagedata.dubaiwhatsapp} />
       </>
    );
 }
