@@ -1,3 +1,31 @@
+$breakpoints: (
+  xs: 0,
+  // mobile
+  sm: 576px,
+  // small devices
+  md: 768px,
+  // tablets
+  lg: 992px,
+  // laptops
+  xl: 1200px,
+  // desktops
+  xxl: 1400px, // large screens
+);
+
+@mixin responsive-min($size) {
+  $breakpoint: map-get($breakpoints, $size);
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin responsive-max($size) {
+  $breakpoint: map-get($breakpoints, $size);
+  @media (max-width: ($breakpoint - 1)) {
+    @content;
+  }
+}
+
 @mixin btnShadow($themeValue) {
   box-shadow: 0 0.4rem 0.1rem 0.1rem rgba($themeValue, 0.7);
 }
@@ -43,6 +71,27 @@
   }
 }
 
+@mixin homeBased {
+  svg {
+    vertical-align: 0rem;
+  }
+  h2,
+  .h2 {
+    margin-right: 5rem;
+    small {
+      color: rgba($black, 0.4);
+      font-weight: lighter;
+      margin-right: 0.3rem;
+      font-size: inherit;
+    }
+  }
+  .sub-head {
+    margin-right: 5rem;
+    font-size: var(--font-smaller);
+    color: $primary;
+  }
+}
+
 %next-prev-decoration {
   overflow-y: inherit;
   overflow-x: clip;
@@ -52,7 +101,7 @@
     width: 2rem;
     height: 2rem;
     border-radius: 100vmax;
-    background-color: $white;
+    background-color: white;
     border: 1px solid rgba($primary, 0.2);
     box-shadow: 0px 5px 3px 0px rgba($primary, 0.45);
     &:hover {
@@ -151,7 +200,7 @@
     border-right: 1px solid lighten($primary, $opacity);
     transition: all 0.2s ease;
     &::before {
-      content: "";
+      content: '';
       display: block;
       width: 1px;
       height: 40px;
@@ -160,7 +209,7 @@
       // transform: rotate(-45deg) translate(26px, 9px);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 1.5rem;
       height: 1.5rem;

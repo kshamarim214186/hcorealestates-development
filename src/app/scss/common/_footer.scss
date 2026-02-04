@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   background-color: $gray-100;
   &__top {
     background-color: $white;
@@ -68,7 +68,7 @@
     @include responsive(min992) {
       padding-bottom: 2.5rem;
     }
-    padding-bottom: 4.5rem;
+    // padding-bottom: 4.5rem;
     a {
       display: block;
       padding-top: 0.3rem;
@@ -94,12 +94,18 @@
       }
     }
   }
+  &__list {
+    // border: red solid 1px;
+    @include responsive-max(md) {
+      margin-bottom: 2rem;
+    }
+  }
   &__about {
     border-top: 1px solid rgba($primary, 0.2);
     @extend .footer__middle;
-    .h5 {
+    /*     .h5 {
       margin-top: calc(var(--common-space) * 1.5);
-    }
+    } */
 
     @include responsive(max991) {
       padding-bottom: var(--common-space);

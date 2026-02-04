@@ -1,0 +1,59 @@
+@import '../scss/common/variables';
+@import '../scss/common/mixins';
+.root {
+  position: relative;
+  .imageWrap {
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: var(--border-theme);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba($black, 0), rgba($black, 1));
+      border-radius: inherit;
+      z-index: 2;
+    }
+  }
+  .imgThumb {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+  }
+  &:hover {
+    .imgThumb {
+      transform: scale(1.1);
+    }
+  }
+  .figCaption {
+    margin-top: -3rem;
+    padding: 1rem;
+    h5 {
+      // font-size: 1rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    a {
+      color: $white;
+    }
+  }
+}
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: var(--font-medium);
+  color: $primary;
+}
+.dirham {
+  width: 0.9rem;
+  margin-bottom: 0.3rem;
+}

@@ -1,5 +1,8 @@
 @import './common/variables';
 @import './common/mixins';
+.root {
+  position: relative;
+}
 
 .bannerSection {
   position: relative;
@@ -9,9 +12,6 @@
   position: absolute;
   top: 35%;
   right: 0;
-  // width: auto;
-  // height: 100vh;
-  // border: red solid 1px;
   overflow: hidden;
   img {
     position: relative;
@@ -20,14 +20,12 @@
 }
 
 .banner {
-  // border: red solid 1px;
-  // margin-top: 4.2rem;
   height: 400px;
   @include responsive(min768) {
     height: 550px;
   }
   position: relative;
-  img {
+  .bannerImage {
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
@@ -59,115 +57,181 @@
     margin-bottom: 1rem;
   }
   .inner {
-    // border: red solid 1px;
     position: relative;
     background-color: rgba($body-color, 0.2);
     padding: var(--common-space);
     border-radius: 0.5rem;
   }
 }
-.popularSearch {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+
+.popularSection {
+  @include homeBased;
+  padding-block-start: 2.5rem;
   @include responsive(min992) {
-    flex-wrap: inherit;
+    padding-block-start: 4rem;
   }
-  // align-items: center;
-  column-gap: 0.5rem;
   .heading {
-    font-size: 0.85rem;
-    white-space: nowrap;
-    color: $white;
-    margin-bottom: 0.5rem;
-    font-weight: var(--font-bold);
+    margin-bottom: 2rem;
     text-align: center;
-    @include responsive(min640) {
-      text-align: left;
+  }
+}
+.placeContainer {
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid rgba($primary, 0.1);
+  background-color: rgba($primary, 0.03);
+  @include responsive-max(lg) {
+    margin-bottom: 2rem;
+  }
+  .iconBox {
+    position: relative;
+    margin-bottom: 1rem;
+    text-align: center;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100px;
+      height: 100px;
+      background-color: rgba($primary, 0.1);
+      z-index: 1;
+      border-radius: var(--radius-vmax);
+      left: 50%;
+      transform: translate(-60%);
     }
   }
-  ul {
-    display: flex;
-    column-gap: 0.5rem;
-    font-size: 0.85rem;
-    overflow-x: auto;
+  .placeSeparator {
+    border-top: 1px solid rgba($primary, 0.1);
+    padding-block-start: 1rem;
+    margin-block-start: 1rem;
+  }
+}
+.swiperContainer {
+  :global {
+    @extend %next-prev-decoration;
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 40%;
+    }
+    .swiper-button-prev {
+      left: 0.2rem;
+    }
+  }
+}
+
+.demandSection {
+  background-color: rgba($primary, 0.09);
+  @include homeBased;
+  margin-top: 2.5rem;
+  padding-block: 2.5rem;
+  @include responsive(min992) {
+    margin-top: 4rem;
+    padding-block: 4rem;
+  }
+}
+
+.categories {
+  background-color: rgba($primary, 0.09);
+  margin-block-start: 2rem;
+  padding-block: 3rem;
+  @include responsive-min(lg) {
+    padding-block: 4rem;
+    margin-block-start: 4rem;
+  }
+  .categoriesLeft {
+    border: rgba($primary, 0.2) solid 1px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    @include responsive-max(lg) {
+      margin-bottom: 2.5rem;
+    }
+    @include responsive-min(lg) {
+      padding: 2.5rem;
+      min-height: 100%;
+    }
+  }
+  .swiperContainer {
+    :global {
+      .swiper-button-prev,
+      .swiper-button-next {
+        top: 50%;
+      }
+    }
+  }
+}
+
+/* Each card */
+.card {
+  position: relative;
+  height: 420px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+
+  .thumbImg {
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+  }
 
-    // border: red solid 1px;
-    @include responsive(mi768) {
-      // justify-content: center;
-    }
-    li {
-      @include responsive(max991) {
-        white-space: nowrap;
-        margin-bottom: 0.6rem;
-      }
-      a {
-        color: var(--bs-gray-400);
-        background-color: rgba($body-color, 0.7);
-        display: block;
-        padding: 0.4rem 0.7rem 0.3rem;
-        border-radius: var(--border-theme);
-        border: 1px solid rgba($primary, 0.2);
-        transition: all 0.2s;
-        &:hover {
-          background-color: $black;
-          color: var(--bs-white);
-          box-shadow: 0 2px 5px 0 rgba($primary, 0.3);
-        }
-      }
+  &:hover {
+    .thumbImg {
+      transform: scale(1.03);
     }
   }
 }
 
-.customSearches {
-  margin-top: 0.5rem;
-  .customControl {
-    padding: 0.8rem;
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: $white;
+  background: linear-gradient(to top, rgba($black, 0.75), rgba($black, 0.25), rgba($black, 0));
+  z-index: 2;
+  a {
+    // color
+    color: $white;
   }
 }
 
-%homeBased {
-  svg {
-    vertical-align: 0rem;
-  }
-  h2,
-  .h2 {
-    /* font-size: var(--heading-font);
-    @include responsive(min640) {
-      font-size: 2.5vw;
-    }
-    @include responsive(min768) {
-      font-size: 2.5vw;
-    }
-    @include responsive(min992) {
-      font-size: 2.5vw;
-    } */
-    margin-right: 5rem;
-    small {
-      color: rgba($black, 0.4);
-      font-weight: lighter;
-      margin-right: 0.3rem;
-      font-size: inherit;
-    }
-  }
-  .sub-head {
-    margin-right: 5rem;
-    font-size: var(--font-smaller);
-    color: $primary;
-  }
+/* Title */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Description */
+.desc {
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 85%;
+  opacity: 0.9;
+}
+
+/* Arrow icon */
+.arrow {
+  /* position: absolute;
+  right: 22px;
+  bottom: 20px;
+  font-size: 26px;
+  font-weight: bold; */
 }
 
 .topProjectContent {
-  @extend %homeBased;
-  padding: 2rem 0;
+  @include homeBased;
+  padding: 2.5rem 0;
   @include responsive(min992) {
-    padding: 4rem 0 2rem;
+    padding: 4rem 0 2.5rem;
   }
 
   :global {
-    // border: red solid 1px;
     .swiper-slide {
       width: 90%;
       @include responsive(min640) {
@@ -201,33 +265,53 @@
           font-size: 1.2rem;
         }
       }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        // border: red solid 1px;
-        @include responsive(min768) {
-          flex-wrap: nowrap;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      @include responsive(min768) {
+        flex-wrap: nowrap;
+      }
+      font-size: 0.9rem;
+      li {
+        white-space: nowrap;
+        margin-bottom: 0.5rem;
+        svg {
+          vertical-align: middle;
+          color: rgba($body-color, 0.8);
         }
-        font-size: 0.9rem;
-        li {
-          white-space: nowrap;
-          margin-bottom: 0.5rem;
-          svg {
-            vertical-align: middle;
-            color: rgba($body-color, 0.8);
-          }
-          &:not(:last-child) {
-            border-right: 1px solid rgba($primary, 0.2);
-            padding-right: 0.5rem;
-          }
-          &:not(:first-child) {
+        &:not(:last-child) {
+          border-right: 1px solid rgba($primary, 0.2);
+          padding-right: 0.5rem;
+        }
+        &:not(:first-child) {
+          padding-left: 0.5rem;
+        }
+        &:last-child {
+          padding-left: 0;
+          @media (min-width: 430px) {
             padding-left: 0.5rem;
           }
-          &:last-child {
-            padding-left: 0;
-            @media (min-width: 430px) {
-              padding-left: 0.5rem;
-            }
+        }
+      }
+      li {
+        white-space: nowrap;
+        margin-bottom: 0.5rem;
+        svg {
+          vertical-align: middle;
+          color: rgba($body-color, 0.8);
+        }
+        &:not(:last-child) {
+          border-right: 1px solid rgba($primary, 0.2);
+          padding-right: 0.5rem;
+        }
+        &:not(:first-child) {
+          padding-left: 0.5rem;
+        }
+        &:last-child {
+          padding-left: 0;
+          @media (min-width: 430px) {
+            padding-left: 0.5rem;
           }
         }
       }
@@ -247,7 +331,6 @@
       bottom: 0;
       width: 100%;
       height: 60%;
-      // background-color: rgba($black, 0.5);
       content: '';
       z-index: 1;
       background: linear-gradient(0deg, rgba($black, 1) 0%, rgba($black, 0) 100%);
@@ -276,10 +359,9 @@
 }
 
 .featureProject {
-  @extend %homeBased;
-  padding: 2rem 0;
+  @include homeBased;
   @include responsive(min992) {
-    padding: 4rem 0 2rem;
+    padding-top: 4rem;
   }
   :global {
     .swiper-slide {
@@ -291,10 +373,6 @@
     }
     .list {
       @extend %projectItems;
-      // border: red solid 1px;
-      /* img {
-        height: auto;
-      } */
       .price {
         @extend %price;
       }
@@ -303,10 +381,10 @@
 }
 
 .featureCollection {
-  @extend %homeBased;
-  padding: 2rem 0;
+  @include homeBased;
+  padding-top: 2.5rem;
   @include responsive(min992) {
-    padding: 4rem 0 2rem;
+    padding-top: 4rem;
   }
   :global {
     .swiper-slide {
@@ -359,10 +437,10 @@
 }
 
 .developers {
-  @extend %homeBased;
-  padding: 2rem 0;
+  @include homeBased;
+  padding-block-start: 2.5rem;
   @include responsive(min992) {
-    padding: 4rem 0;
+    padding-block-start: 4rem;
   }
   :global {
     .swiper-slide {
@@ -384,13 +462,64 @@
       margin-top: 1.5rem;
     }
   }
+
+  .developerWrapper {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    @include responsive-min(sm) {
+      align-items: flex-end;
+      flex-direction: row;
+    }
+  }
+
+  .iconWrapper {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bgCircle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .icon {
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: #666;
+  }
+}
+.developerContainer {
+  border: rgba($primary, 0.2) solid 1px;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
 }
 
 .news {
-  @extend %homeBased;
-  padding: 2rem 0;
+  @include homeBased;
+  padding-top: 2.5rem;
   @include responsive(min992) {
-    padding: 4rem 0;
+    padding-top: 4rem;
   }
   :global {
     .swiper-slide {
@@ -443,10 +572,10 @@
 }
 
 .testimonials {
-  @extend %homeBased;
-  padding: 2rem 0 0;
+  @include homeBased;
+  padding-top: 2.5rem;
   @include responsive(min992) {
-    padding: 4rem 0;
+    padding: 4rem 0 1.5rem;
   }
   &__bg {
     border-radius: var(--border-theme);
@@ -454,21 +583,11 @@
     border: 1px solid rgba($primary, 0.2);
     position: relative;
     overflow: hidden;
-    /*  display: flex;
-    align-items: center;
-    justify-content: center; */
-
-    // padding: 2rem;
     .leftBg,
     .rightBg {
       position: absolute;
       width: 400px;
       height: 400px;
-      // border: red solid 1px;
-      /* img {
-        width: 190%;
-        height: 190%;
-      } */
     }
     .leftBg {
       transform: rotate(340deg);
@@ -512,7 +631,6 @@
   }
 }
 .swiperCustomControl {
-  // overflow-y: hidden;
   :global {
     @extend %next-prev-decoration;
     .swiper-pagination-bullet {
@@ -524,8 +642,4 @@
       }
     }
   }
-}
-
-.custom-btn {
-  border: red solid 1px;
 }
