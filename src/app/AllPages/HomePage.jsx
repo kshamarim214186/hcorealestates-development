@@ -30,7 +30,9 @@ export default function HomePage({ result }) {
 
   const pageData = result.pagedata;
   const spotlight = result.spotlight;
+  const spotlightdubai = result.spotlightdubai;
   const featuredPro = result.featuredproject;
+  const featureddubaiPro = result.featureddubaiproject;
   const developers = result.developerdata;
   const dubaidevelopers = result.dubaideveloperdata;
   const banksData = result.bankdata;
@@ -151,7 +153,7 @@ export default function HomePage({ result }) {
                     640: { slidesPerView: 2 },
                   }}
                 >
-                  {featuredPro.map((item) => (
+                  {featureddubaiPro.map((item) => (
                     <SwiperSlide key={item.id}>
                       <PropertyCard property={item} />
                     </SwiperSlide>
@@ -182,7 +184,7 @@ export default function HomePage({ result }) {
                 1025: { slidesPerView: 3 },
               }}
             >
-              {featuredPro.map((item) => (
+              {spotlight.map((item) => (
                 <SwiperSlide key={item.id}>
                   <SinglePropSection itemObj={item} />
                 </SwiperSlide>
@@ -207,7 +209,7 @@ export default function HomePage({ result }) {
                 1025: { slidesPerView: 3 },
               }}
             >
-              {featuredPro.map((item) => (
+              {spotlightdubai.map((item) => (
                 <SwiperSlide key={item.id}>
                   <SinglePropSection itemObj={item} />
                 </SwiperSlide>
