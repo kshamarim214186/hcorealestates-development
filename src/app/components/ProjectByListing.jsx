@@ -73,7 +73,7 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
                <div className={styles.container__right}>
                  <div className={styles.listInfo}>
                    <div className="">
-                     <h2 className="h1">{pageData.proplisth2}</h2>               
+                     {pageName == 'dubai-projects' ? <h2 className="h1">{pageData.dubaiproplisth2}</h2> : <h2 className="h1">{pageData.proplisth2}</h2> }                
                    </div>
                    <div className={styles.sort}>
                      <SortFilter sortObj={sortObj} currentpage={currentpage} />
