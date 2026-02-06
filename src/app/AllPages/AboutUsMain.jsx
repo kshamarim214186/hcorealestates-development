@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import styles from "@/app/scss/about.module.scss";
 import { Breadcrumb, Accordion } from "react-bootstrap";
+import TextComponent from "@/app/UI/TextComponent";
 
 export default function AboutUsMain({ itemConndata, itemAwdata, itemTdata, resultOtherPage }) {
   const conndata = itemConndata;
@@ -38,9 +39,10 @@ export default function AboutUsMain({ itemConndata, itemAwdata, itemTdata, resul
             </div>
             <div className="col-lg-7">
               <div className={styles.aboutRight}>
-                {otherPageData.aboutp1 && <p>{otherPageData.aboutp1}</p>}
+                {/*otherPageData.aboutp1 && <p>{otherPageData.aboutp1}</p>}
                 {otherPageData.aboutp2 && <p>{otherPageData.aboutp2}</p>}
-                {otherPageData.aboutp3 && <p>{otherPageData.aboutp3}</p>}
+                {otherPageData.aboutp3 && <p>{otherPageData.aboutp3}</p>*/}
+                {otherPageData.texteditercontent && <TextComponent itemObj={otherPageData.texteditercontent} />}
               </div>
             </div>
           </div>
