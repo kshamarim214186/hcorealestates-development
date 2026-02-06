@@ -18,7 +18,7 @@ export default function NotFound() {
       </div>
       <div className={styles.error__info}>
         <h1>Oops! - Page Not Found!</h1>
-        <p>The page you are looking for was moved, removed, renamed or might never existed.</p>
+        <h6>The page you are looking for was moved, removed, renamed or might never existed.</h6>
         <div className="d-flex gap-2 flex-wrap flex-sm-nowrap justify-content-center">
           <Link href="/" className="btn btn-outline-light">TAKE ME OUT OF HERE</Link><Link href="/contact-us/" className="btn btn-outline-light">CONTACT US</Link>
         </div>

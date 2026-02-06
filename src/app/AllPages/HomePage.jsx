@@ -354,7 +354,7 @@ export default function HomePage({ result }) {
                 ))}
               </Swiper>
             </div>
-            <CustomButton url={pageData.builderurl} buttonName="India More Developers" />
+            <CustomButton url={pageData.builderurl} buttonName="India More Builders" />
           </div>
         </section>
 
