@@ -8,6 +8,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Button from '../UI/Button';
 import CustomButton from '../UI/CustomButton';
 import SocialMedia from '../UI/SocialMedia';
+import TextComponent from "@/app/UI/TextComponent";
 
 export default function Footer({
   resultFooter,
@@ -195,7 +196,7 @@ export default function Footer({
             <div className="row">
               <div className="col-md-12">
                 <div className="h5">About Us</div>
-                <p>{pageData.aboutusshortdesc}</p>
+                <TextComponent className="" itemObj={pageData.aboutusshortdesc} />
                 <CustomButton buttonName="About More" url={pageData.aboutusurl} />
               </div>
               {blogcategory.length > 0 && <div className="col-md-2 offset-md-1 col-sm-6 col-6"></div>}

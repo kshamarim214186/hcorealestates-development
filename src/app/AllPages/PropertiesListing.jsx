@@ -9,6 +9,7 @@ import { faFilterList } from "@fortawesome/pro-regular-svg-icons";
 import Accordion from "react-bootstrap/Accordion";
 import ProjectByListing from "@/app/components/ProjectByListing";
 import LoadingCustom from '@/app/components/loading-custom';
+import TextComponent from "@/app/UI/TextComponent";
 
 
 export default function PropertiesListing({ developers, pageName, pageData }) {  
@@ -32,10 +33,10 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
                <div className="col-lg-12">
                   <div className={styles.overview}>
                      <h1>{pageData.proplisth1}</h1>
-                     <p>{pageData.proplistshortdesc}</p>
+                     <TextComponent className="" itemObj={pageData.proplistshortdesc} />
                      <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="1">
-                           <Accordion.Body>{pageData.proplistfulldesc}</Accordion.Body>
+                        <Accordion.Item eventKey="1">                           
+                           <Accordion.Body><TextComponent className="" itemObj={pageData.proplistfulldesc} /></Accordion.Body>
                            <Accordion.Header as={"div"}></Accordion.Header>
                         </Accordion.Item>
                      </Accordion>
