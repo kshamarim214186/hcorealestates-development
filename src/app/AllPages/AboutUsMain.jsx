@@ -29,7 +29,7 @@ export default function AboutUsMain({ itemConndata, itemAwdata, itemTdata, resul
             <Breadcrumb.Item active>About Us</Breadcrumb.Item>
           </Breadcrumb>
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-12">
               <div className={styles.aboutLeft}>
                 <div className={styles.aboutLeft__heading}>
                   <small>About</small>
@@ -37,12 +37,11 @@ export default function AboutUsMain({ itemConndata, itemAwdata, itemTdata, resul
                 </div>
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-12">
               <div className={styles.aboutRight}>
-                {/*otherPageData.aboutp1 && <p>{otherPageData.aboutp1}</p>}
-                {otherPageData.aboutp2 && <p>{otherPageData.aboutp2}</p>}
-                {otherPageData.aboutp3 && <p>{otherPageData.aboutp3}</p>*/}
-                {otherPageData.texteditercontent && <TextComponent itemObj={otherPageData.texteditercontent} />}
+                 {otherPageData.texteditercontent && (
+                  <TextComponent className={styles.textComponent} itemObj={otherPageData.texteditercontent} />
+                )}
               </div>
             </div>
           </div>

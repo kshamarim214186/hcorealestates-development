@@ -1,5 +1,5 @@
-@import "./common/variables";
-@import "./common/mixins";
+@import './common/variables';
+@import './common/mixins';
 
 .about__banner {
   position: relative;
@@ -28,7 +28,7 @@
     &::after {
       height: 150px;
       width: 150px;
-      content: "";
+      content: '';
     }
     &::before {
       background-color: rgba($primary, 0.05);
@@ -47,15 +47,31 @@
       margin-left: -7rem;
     }
   }
-  .aboutRight {
-    p {
-      text-align: justify;
-      @include responsive(min768) {
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
-      }
+  .textComponent {
+    > * {
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      margin-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      list-style: disc;
     }
   }
+  .aboutRight {
+    margin-bottom: var(--common-space);
+    @include responsive-min(lg) {
+      margin-bottom: var(--common-space-xl);
+    }
+    text-align: justify;
+    h3,
+    h4,
+    h5 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   .others {
     display: flex;
     flex-wrap: wrap;
