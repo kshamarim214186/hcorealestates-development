@@ -14,7 +14,7 @@ import Header from "@/app/components/Header";
 import NotFound from "@/app/components/NotFound";
 
 
-export default async function PropertiesListingByCondition({ itemObj,message, column, developers }) {
+export default async function PropertiesListingByCondition({ itemObj,message, column, developers, location = false }) {
    const searchParams = useSearchParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
    const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
@@ -35,7 +35,7 @@ export default async function PropertiesListingByCondition({ itemObj,message, co
          <div className="row">
             <div className="col-lg-4">
                <div className={`${styles.container__left} sticky-top`}>                     
-                  <Filter developer={developers} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} />
+                  <Filter developer={developers} currentpage={currentpage} devObj={getDev} bedObj={getBed} ptypeObj={getPType} minObj={priceMin} maxObj={priceMax} sortObj={sort} {...(location && { proplocation: location })} />
                </div>
             </div>
             <div className="col-lg-8">

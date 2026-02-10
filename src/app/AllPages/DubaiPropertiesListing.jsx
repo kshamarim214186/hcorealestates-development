@@ -15,6 +15,7 @@ import TextComponent from "@/app/UI/TextComponent";
 export default function DubaiPropertiesListing({ developers, pageName, pageData }) {    
    
    const canonicalUrl = pageData.homeurl+pageName;
+   const location = 'dubai';
    return (
       <>
          <main className={`${styles.container} container-xl`}>
@@ -26,7 +27,7 @@ export default function DubaiPropertiesListing({ developers, pageName, pageData 
                 <Breadcrumb.Item active>Dubai Properties</Breadcrumb.Item>
             </Breadcrumb>
             <Suspense fallback={<LoadingCustom />}>
-               <ProjectByListing developers={developers} pageName={pageName} pageData={pageData} />
+               <ProjectByListing developers={developers} pageName={pageName} pageData={pageData} location={location} />
             </Suspense> 
             <div className="row">
                <div className="col-lg-12">

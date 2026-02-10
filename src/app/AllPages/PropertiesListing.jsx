@@ -16,6 +16,7 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
    
    const column = 'properties';
    const canonicalUrl = pageData.homeurl+pageName;
+   const location = 'india';
    return (
       <>
          <main className={`${styles.container} container-xl`}>
@@ -27,7 +28,7 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
                 <Breadcrumb.Item active>Properties</Breadcrumb.Item>
             </Breadcrumb>
             <Suspense fallback={<LoadingCustom />}>
-               <ProjectByListing developers={developers} pageName={pageName} pageData={pageData} />
+               <ProjectByListing developers={developers} pageName={pageName} pageData={pageData} location={location} />
             </Suspense> 
             <div className="row">
                <div className="col-lg-12">

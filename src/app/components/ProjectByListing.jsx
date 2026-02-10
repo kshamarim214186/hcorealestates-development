@@ -9,7 +9,7 @@ import LoadingCustom from './loading-custom';
 import SortFilter from "@/app/UI/sort-filter";
 import Filter from "../components/Filter";
 
-export default function ProjectByListing({ developers, pageName, pageData }) { 
+export default function ProjectByListing({ developers, pageName, pageData, location }) { 
    const searchParams = useSearchParams() 
    const page = searchParams.get('page') ? searchParams.get('page') : "";
    const currentpage = searchParams.get('page') ? searchParams.get('page') : "1";
@@ -50,8 +50,10 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
       })
       .then((res) => res.json())
       .then((result) => {
-         if (!Array.isArray(result.propertydata) || result.propertydata.length === 0) {
-          router.push('https://www.hcorealestates.com/project');
+         if ((!Array.isArray(result.propertydata) || result.propertydata.length === 0) && location == 'dubai') {
+            router.push('https://www.hcorealestates.com/dubai-projects');
+         }else{
+            router.push('https://www.hcorealestates.com/project');
          }
          setProperties(result.propertydata);
          setMessage(result.message);
@@ -65,8 +67,8 @@ export default function ProjectByListing({ developers, pageName, pageData }) {
       <> 
          <div className="row">
             <div className="col-lg-4">
-               <div className={`${styles.container__left} sticky-top`}>                 
-                  <Filter developer={developers} currentpage={currentpage} devObj={devObj} bedObj={bedObj} ptypeObj={ptypeObj} minObj={minObj} maxObj={maxObj} sortObj={sortObj} />
+               <div className={`${styles.container__left} sticky-top`}>        
+                  <Filter developer={developers} currentpage={currentpage} devObj={devObj} bedObj={bedObj} ptypeObj={ptypeObj} minObj={minObj} maxObj={maxObj} sortObj={sortObj} {...(location && { proplocation: location })} />
                </div>
             </div>
             <div className="col-lg-8">

@@ -40,7 +40,7 @@ export default async function Page({ params: { locationurl, sector } }) {
             <meta name="description" content={finalresult.seodesc} />
             <link rel="canonical" href={finalresult.url} />
             <Suspense fallback={<LoadingCustom />}>
-               <PropertiesListingByCondition itemObj={finalresult} message={message} column={columnname} developers={sectorResult.allbuilders} />
+               <PropertiesListingByCondition itemObj={finalresult} message={message} column={columnname} developers={sectorResult.allbuilders} location={finalresult.locationurl} />
             </Suspense>
          </main>: 
          <NotFound />

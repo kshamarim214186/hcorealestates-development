@@ -39,7 +39,7 @@ export default async function PropertyLocation({ params: { location } }) {
             <meta name="description" content={finalresult.seodesc} />
             <link rel="canonical" href={finalresult.url} />
             <Suspense fallback={<LoadingCustom />}>
-               <PropertiesListingByCondition itemObj={finalresult} message={locationResult.message} column={columnname} developers={locationResult.allbuilders} />
+               <PropertiesListingByCondition itemObj={finalresult} message={locationResult.message} column={columnname} developers={locationResult.allbuilders} location={finalresult.locationurl} />
             </Suspense>
          </main>: 
          <NotFound />

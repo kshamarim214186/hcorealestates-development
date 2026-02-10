@@ -10,8 +10,8 @@ import styles from "../scss/properties.module.scss";
 import SortFilter from "@/app/UI/sort-filter";
 import Link from "next/link";
 
-export default function Filter({ developer, currentpage, devObj, bedObj, ptypeObj, minObj, maxObj, sortObj }) {
-
+export default function Filter({ developer, currentpage, devObj, bedObj, ptypeObj, minObj, maxObj, sortObj, proplocation = false }) {
+   
    const pathname = usePathname();
    const currentPage = pathname+'?page='+currentpage
 
@@ -100,6 +100,7 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
    }
 
    const [priceFilter, setpriceFilter] = useState([]);
+   const [bedFilter, setbedFilter] = useState([]);
    const [loading, setLoading] = useState(true);
    useEffect(() => {
       const fetchData = async () => {
@@ -107,6 +108,7 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
             const formData = new URLSearchParams();
             formData.append('token1', process.env.token1);
             formData.append('token2', process.env.token2);
+            formData.append('proplocation', proplocation);
             const finalresult = await fetch(process.env.API_URL+'users/GetPriceList/', {
                method: 'POST',
                headers: {
@@ -116,6 +118,7 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
             });   
            const result = await finalresult.json();
            setpriceFilter(result.price);
+           setbedFilter(result.bhk);
          } catch (error) {
             console.error('Error fetching data:', error);
          } finally {
@@ -149,21 +152,13 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
                   <div className="mb-4">
                      <div className="border-bottom mb-3 pb-1">Bedroom</div>
                      <ToggleButtonGroup className={styles.checkboxes} type="radio" name="bed" size="sm" value={value} onChange={handleChange}>
-                        <ToggleButton variant="outline-primary" id="tbg-btn-1" value={1} onChange={(e) => setBed(e.target.value)}>
-                          1 BHK
-                        </ToggleButton>
-                        <ToggleButton variant="outline-primary" id="tbg-btn-2" value={2} onChange={(e) => setBed(e.target.value)}>
-                          2 BHK
-                        </ToggleButton>
-                        <ToggleButton variant="outline-primary" id="tbg-btn-3" value={3} onChange={(e) => setBed(e.target.value)}>
-                          3 BHK
-                        </ToggleButton>
-                        <ToggleButton variant="outline-primary" id="tbg-btn-4" value={4} onChange={(e) => setBed(e.target.value)}>
-                          4 BHK
-                        </ToggleButton>
-                        <ToggleButton variant="outline-primary" id="tbg-btn-5" value={5} onChange={(e) => setBed(e.target.value)}>
-                          5 BHK
-                        </ToggleButton>
+                        {bedFilter.map(function(data,idx) {
+                           return (
+                              <ToggleButton variant="outline-primary" key={idx} id={`tbg-btn-${data.key}`} value={data.key} onChange={(e) => setBed(e.target.value)}>
+                                 {data.value}
+                              </ToggleButton>
+                           )
+                        })}
                      </ToggleButtonGroup>
                   </div>
                   <div className="mb-4">
