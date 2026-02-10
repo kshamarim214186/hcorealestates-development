@@ -129,7 +129,7 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
       return () => {
 
       };
-   }, []);
+   }, [proplocation]);
    
    return ( 
       <>
