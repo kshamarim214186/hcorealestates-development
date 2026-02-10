@@ -39,7 +39,7 @@ export default function AboutUsMain({ itemConndata, itemAwdata, itemTdata, resul
             </div>
             <div className="col-lg-12">
               <div className={styles.aboutRight}>
-                 {otherPageData.texteditercontent && (
+                {otherPageData.texteditercontent && (
                   <TextComponent className={styles.textComponent} itemObj={otherPageData.texteditercontent} />
                 )}
               </div>

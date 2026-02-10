@@ -35,7 +35,7 @@ export default function PropertiesListing({ developers, pageName, pageData }) {
                      <h1>{pageData.proplisth1}</h1>
                      <TextComponent className="" itemObj={pageData.proplistshortdesc} />
                      <Accordion defaultActiveKey="0">
-                        <Accordion.Item eventKey="1">                           
+                        <Accordion.Item eventKey="1">
                            <Accordion.Body><TextComponent className="" itemObj={pageData.proplistfulldesc} /></Accordion.Body>
                            <Accordion.Header as={"div"}></Accordion.Header>
                         </Accordion.Item>

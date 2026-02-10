@@ -72,7 +72,7 @@ export default function HomePage({ result }) {
             </div>
           </div>
         </section>
-        <PopupModal show={popupShow} onHide={() => setPopupShow(false)} onClick={closeModal}>
+        { /*<PopupModal show={popupShow} onHide={() => setPopupShow(false)} onClick={closeModal}>
           {pageData.popupurl && pageData.popupimage && (
             <Link href={pageData.popupurl} target="_blank">
               <Image
@@ -95,7 +95,7 @@ export default function HomePage({ result }) {
               height={560}
             />
           )}
-        </PopupModal>
+        </PopupModal>*/ }
 
         <section className={`container-xl ${styles.popularSection}`}>
           <div className="row">
