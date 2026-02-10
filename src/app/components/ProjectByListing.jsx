@@ -50,9 +50,7 @@ export default function ProjectByListing({ developers, pageName, pageData, locat
       })
       .then((res) => res.json())
       .then((result) => {
-         if ((!Array.isArray(result.propertydata) || result.propertydata.length === 0) && location == 'dubai') {
-            router.push('https://www.hcorealestates.com/dubai-projects');
-         }else{
+         if (!Array.isArray(result.propertydata) || result.propertydata.length === 0) {
             router.push('https://www.hcorealestates.com/project');
          }
          setProperties(result.propertydata);
