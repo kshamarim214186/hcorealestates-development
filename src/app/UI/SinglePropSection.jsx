@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/pro-regular-svg-icons";
-export default function SinglePropSection({ itemObj }) {
+import DirhamIcon from '../components/DirhamIcon';
 
+export default function SinglePropSection({ itemObj }) {
    return (
       <figure className="list">
          <div className="thumb">
@@ -19,7 +20,10 @@ export default function SinglePropSection({ itemObj }) {
             </ul>
             <div className="price">
                {itemObj.locationname === 'Dubai' ? (
-                  <span>{itemObj.price}</span>
+                  <span>
+                     <DirhamIcon style={{ height: '13px', marginTop: '-4px', marginRight: '3px' }} />
+                     {itemObj.price}
+                  </span>
                ) : (
                <>
                   <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{itemObj.price}</span>{!isNaN(itemObj.price) && <small>Cr.*</small>}

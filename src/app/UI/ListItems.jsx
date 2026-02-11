@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/pro-regular-svg-icons";
-export default function FeatureProjectList({ itemObj }) {
+import DirhamIcon from '../components/DirhamIcon';
 
+export default function FeatureProjectList({ itemObj }) {
    return (
       <figure className="list">
          <div className="thumb">
@@ -20,7 +21,9 @@ export default function FeatureProjectList({ itemObj }) {
             {itemObj.price &&
                <div className="price">
                   {itemObj.locationname === 'Dubai' ? (
-                     <span>{itemObj.price}</span>
+                     <span>
+                        <DirhamIcon style={{ height: '14px', marginTop: '-2px' }} /> {itemObj.price}
+                     </span>
                   ) : (
                   <>
                      <FontAwesomeIcon icon={faIndianRupeeSign} />

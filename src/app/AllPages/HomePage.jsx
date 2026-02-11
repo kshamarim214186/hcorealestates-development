@@ -337,8 +337,8 @@ export default function HomePage({ result }) {
               <Swiper
                 className={styles.swiperCustomControl}
                 modules={[Navigation]}
-                spaceBetween={18}
-                slidesPerView={'auto'}
+                spaceBetween={16}
+                slidesPerView={2}
                 navigation={{ clickable: true }}
                 breakpoints={{
                   640: { slidesPerView: 3 },
@@ -382,8 +382,8 @@ export default function HomePage({ result }) {
               <Swiper
                 className={styles.swiperCustomControl}
                 modules={[Navigation]}
-                spaceBetween={18}
-                slidesPerView={'auto'}
+                spaceBetween={16}
+                slidesPerView={2}
                 navigation={{ clickable: true }}
                 breakpoints={{
                   640: { slidesPerView: 3 },

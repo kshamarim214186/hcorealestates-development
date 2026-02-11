@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { faIndianRupeeSign } from "@fortawesome/pro-regular-svg-icons";
 import Button from "../UI/Button";
 import LoadingCustom from './loading-custom';
+import DirhamIcon from './DirhamIcon';
 
 export default function FloorPlan({ itemObj, propId, projectName }) {
    const buttontext = 'Request Floor Plan';
@@ -69,6 +70,7 @@ export default function FloorPlan({ itemObj, propId, projectName }) {
                                  Prices
                                  {propfloorplan.locationname === 'Dubai' ? (
                                     <span>
+                                       <DirhamIcon style={{ height: '13px', marginTop: '-2px', marginRight: '2px' }} />
                                        {propfloorplan.price}
                                     </span>
                                  ) : (

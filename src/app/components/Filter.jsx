@@ -25,7 +25,7 @@ export default function Filter({ developer, currentpage, devObj, bedObj, ptypeOb
    const [getbed, setBed] = useState(bedObj);
    const [getptype, setPropertyType] = useState(ptypeObj);
 
-   const numberArray = getbed ? [0, parseInt(getbed)] : [0,6];   
+   const numberArray = getbed ? [0, parseInt(getbed)] : [0,7];
    const [value, setValue] = useState(numberArray);
    const handleChange = (val) => setValue(val);
 
