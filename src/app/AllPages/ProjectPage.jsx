@@ -26,6 +26,7 @@ import MoreAmenities from "@/app/UI/MoreAmenities"
 import Button from "@/app/UI/Button";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { far } from '@awesome.me/kit-e7972d293c/icons'
+import DirhamIcon from '../components/DirhamIcon';
 
 library.add(far);
 
@@ -125,7 +126,10 @@ export default function ProjectPage({ itemObj }) {
                               Prices
                               <div className="price">
                                  {propData.locationname === 'Dubai' ? (
-                                    <span>{!isNaN(propData.price) && AED} {propData.price}</span>
+                                    <span>
+                                       <DirhamIcon style={{ height: '13px', marginTop: '-2px' }} /> {!isNaN(propData.price) && AED}
+                                       {propData.price}
+                                    </span>
                                  ) : (
                                     <>
                                        <FontAwesomeIcon icon={faIndianRupeeSign} /> <span>{propData.price}</span>
@@ -146,7 +150,7 @@ export default function ProjectPage({ itemObj }) {
                            Booking Amt.
                            {propData.locationname === 'Dubai' ? (
                               <span>
-                                 {propData.bookingamount}
+                                 <DirhamIcon style={{ height: '13px', marginTop: '-2px' }} /> {propData.bookingamount}
                               </span>
                            ) : (
                               <>
