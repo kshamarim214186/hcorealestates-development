@@ -67,7 +67,7 @@ export default function Header({ resultHeader, commercialData, residentialData, 
             <Offcanvas.Body>
               <Accordion>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header as={'div'} className="h6">Residential Properties</Accordion.Header>
+                  <Accordion.Header as={'div'} className="h6">India Residential</Accordion.Header>
                   <Accordion.Body>
                     <div className="sub-heading">Top Residentails</div>
                     {sortedResidential.slice(0, 4).map(residence =>
