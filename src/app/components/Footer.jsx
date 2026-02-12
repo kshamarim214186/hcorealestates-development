@@ -47,7 +47,7 @@ export default function Footer({
   const pageData = resultFooter.pagedata;
   const spotlight = resultFooter.spotlight;
   const spotlightdubai = resultFooter.spotlightdubai;
-  const builderData = resultFooter.developerdata;
+  const alldevelopers = resultFooter.alldevelopers;
   const blogcategory = resultFooter.blogcatdetail;
   const buttontext = 'Enquire Now';
 
@@ -72,8 +72,9 @@ export default function Footer({
 
   const specificResidentail = pageData.specificRes;
   const sortedResidential = sortBySpecific(residentialData, specificResidentail);
+  
   const specificDev = pageData.specificDeveloper;
-  const sortedDev = sortBySpecific(builderData, specificDev);
+  const sortedDev = sortBySpecific(alldevelopers, specificDev);
 
   const specificCommercial = pageData.specificComm;
   const sortedCommercial = sortBySpecific(commercialData, specificCommercial);

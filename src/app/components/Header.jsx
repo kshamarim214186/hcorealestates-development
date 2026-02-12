@@ -18,7 +18,7 @@ function HomeSearchHidden() {
 }
 
 export default function Header({ resultHeader, commercialData, residentialData, fixedTop, ctoc }) {
-  const builderData = resultHeader.developerdata;
+  const alldevelopers = resultHeader.alldevelopers;
   const pageData = resultHeader.pagedata;
   const [open, setOpen] = useState(false);
   const [menuItem, setMenuItem] = useState(false);
@@ -36,7 +36,7 @@ export default function Header({ resultHeader, commercialData, residentialData, 
   const specificResidentail = pageData.specificRes;
   const sortedResidential = sortBySpecific(residentialData, specificResidentail);
   const specificDev = pageData.specificDeveloper;
-  const sortedDev = sortBySpecific(builderData, specificDev);
+  const sortedDev = sortBySpecific(alldevelopers, specificDev);
 
   const specificCommercial = pageData.specificComm;
   const sortedCommercial = sortBySpecific(commercialData, specificCommercial);
