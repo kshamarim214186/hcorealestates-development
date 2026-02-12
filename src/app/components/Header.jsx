@@ -38,6 +38,9 @@ export default function Header({ resultHeader, commercialData, residentialData, 
   const specificDev = pageData.specificDeveloper;
   const sortedDev = sortBySpecific(builderData, specificDev);
 
+  const specificCommercial = pageData.specificComm;
+  const sortedCommercial = sortBySpecific(commercialData, specificCommercial);
+
   return (
     <>
       <GoToTop />
@@ -84,11 +87,14 @@ export default function Header({ resultHeader, commercialData, residentialData, 
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                  <Accordion.Header as={'div'} className="h6">Commercial Properties</Accordion.Header>
+                  <Accordion.Header as={'div'} className="h6">Dubai Residential</Accordion.Header>
                   <Accordion.Body>
-                    <div className="sub-heading">Top Commercial</div>
-                    {commercialData.sort((a, b) => a.menuname.localeCompare(b.menuname)).map(commercial =>
-                      <Link href={commercial.url} className="items" key={commercial.id}>{commercial.menuname}</Link>)}
+                    <div className="sub-heading">Top Residential</div>
+                    {sortedCommercial.slice(0, 4).map(commerce =>
+                      <Link href={commerce.url} className="items" key={commerce.id}>
+                        {commerce.menuname}
+                      </Link>)
+                    }
                   </Accordion.Body>
                 </Accordion.Item>
 

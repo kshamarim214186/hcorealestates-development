@@ -75,6 +75,9 @@ export default function Footer({
   const specificDev = pageData.specificDeveloper;
   const sortedDev = sortBySpecific(builderData, specificDev);
 
+  const specificCommercial = pageData.specificComm;
+  const sortedCommercial = sortBySpecific(commercialData, specificCommercial);
+
   return (
     <>
       <footer className="footer">
@@ -82,7 +85,7 @@ export default function Footer({
           <div className="container-xl">
             <Accordion>
               <Accordion.Item eventKey="0">
-                <Accordion.Header as={'div'}>Residential</Accordion.Header>
+                <Accordion.Header as={'div'}>India Residential</Accordion.Header>
                 <Accordion.Body>
                   {sortedResidential.slice(0, 4).map((residence) => (
                     <Link href={residence.url} key={residence.id}>
@@ -108,15 +111,13 @@ export default function Footer({
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1">
-                <Accordion.Header as={'div'}>Commercial</Accordion.Header>
+                <Accordion.Header as={'div'}>Dubai Residential</Accordion.Header>
                 <Accordion.Body>
-                  {commercialData
-                    .sort((a, b) => a.menuname.localeCompare(b.menuname))
-                    .map((commercial) => (
-                      <Link href={commercial.url} key={commercial.id}>
-                        {commercial.menuname}
-                      </Link>
-                    ))}
+                    {sortedCommercial.slice(0, 4).map(commerce =>
+                      <Link href={commerce.url} className="items" key={commerce.id}>
+                        {commerce.menuname}
+                      </Link>)
+                    }
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="2">
