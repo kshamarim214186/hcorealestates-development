@@ -429,6 +429,33 @@ export default function HomePage({ result }) {
           </div>
         </section>
 
+        {/* Home Loan Section */}
+        <section className={styles.developers}>
+          <div className="container-xl">
+            <h2>{pageData.bankhomehead}</h2>
+            <p className={styles['sub-head']}>{pageData.bankhomedesc}</p>
+            <Swiper
+              className={styles.swiperCustomControl}
+              modules={[Navigation]}
+              spaceBetween={18}
+              slidesPerView={'auto'}
+              navigation={{ clickable: true }}
+              breakpoints={{
+                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
+                992: { slidesPerView: 5 },
+              }}
+            >
+              {banksData.map((bank) => (
+                <SwiperSlide key={bank.id}>
+                  <AllDevelopers developerObj={bank} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <CustomButton url={pageData.loanurl} buttonName="Know More" />
+          </div>
+        </section>
+
         <section className={styles.testimonials}>
           <div className="container-xl">
             <h2>{pageData.testihead}</h2>

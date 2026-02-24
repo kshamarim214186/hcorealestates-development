@@ -8,7 +8,7 @@ import EmiCalculator from "../components/emi-calculator";
 import LoanForm from "../components/loan-form";
 import styles from "../scss/home-loan.module.scss";
 import BankSliders from "../components/BankSliders";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default async function HomeLoan() {
   const props = getHomeCompleteData();
@@ -80,7 +80,7 @@ export default async function HomeLoan() {
         <section className="container-xl pt-lg-5 pt-3">
           <div className="row">
             <div className="col-md-7 col-lg-8">
-              <h2 className="mb-1">Plan Your Dream Home with EMI Calculator</h2>
+              <h2 className="mb-1">{result.pagedata.banklistinfirsth2}</h2>
               <p>{result.pagedata.bankhomedesc}</p>
               <div className={styles.banks}>
                 <BankSliders
