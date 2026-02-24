@@ -35,7 +35,7 @@ export default async function HomeLoan() {
         fixedTop="nottrue"
         ctoc={ctoc}
       />
-      <main className="pt-4">
+      <main className={styles.root}>
         <title>{result.pagedata.bankseotitle}</title>
         <meta name="description" content={result.pagedata.bankseodesc} />
         <meta name="robots" content="noindex, nofollow" />
