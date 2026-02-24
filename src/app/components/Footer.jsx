@@ -187,6 +187,7 @@ export default function Footer({
                     <Link href={pageData.contactusurl}>Contact Us</Link>
                     <Link href={pageData.disclaimerurl}>Disclaimer</Link>
                     <Link href={pageData.ppolicyurl}>Privacy Policy</Link>
+                    <Link href={pageData.loanurl}>Home Loan</Link>
                   </div>
                 </div>
               </div>

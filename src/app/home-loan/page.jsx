@@ -1,27 +1,29 @@
-import Image from 'next/image';
-import getHomeCompleteData from '../api/getHomeCompleteData';
-import getLocationType from '../api/getLocationType';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import BsAccordion from '../components/bs-accordion';
-import EmiCalculator from '../components/emi-calculator';
-import LoanForm from '../components/loan-form';
-import styles from '../scss/home-loan.module.scss';
+import Image from "next/image";
+import getHomeCompleteData from "../api/getHomeCompleteData";
+import getLocationType from "../api/getLocationType";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import BsAccordion from "../components/bs-accordion";
+import EmiCalculator from "../components/emi-calculator";
+import LoanForm from "../components/loan-form";
+import styles from "../scss/home-loan.module.scss";
+import BankSliders from "../components/BankSliders";
+import Link from 'next/link';
 
 export default async function HomeLoan() {
   const props = getHomeCompleteData();
   const result = await props;
   const banksData = result.bankdata;
   const faqsData = result.loanfaqdata;
-  const residential = getLocationType('residential');
+  const residential = getLocationType("residential");
   const resData = await residential;
   const residentialData = resData.loctype;
 
-  const commercial = getLocationType('commercial');
+  const commercial = getLocationType("commercial");
   const commData = await commercial;
   const commercialData = commData.loctype;
-  const pageName = 'project';
-  const projectName = 'Get Home Loan at 7.35%*';
+  const pageName = "project";
+  const projectName = "Get Home Loan at 7.35%*";
   const ctoc = result.pagedata.loancallnumber;
   const whatsApp = result.pagedata.loanwhatsnumber;
   return (
@@ -30,8 +32,8 @@ export default async function HomeLoan() {
         resultHeader={result}
         commercialData={commercialData}
         residentialData={residentialData}
-         fixedTop="nottrue" 
-         ctoc={ctoc}
+        fixedTop="nottrue"
+        ctoc={ctoc}
       />
       <main className="pt-4">
         <title>{result.pagedata.bankseotitle}</title>
@@ -39,16 +41,27 @@ export default async function HomeLoan() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={result.pagedata.loanurl} />
         <section className="container-xl">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <Link href="/">Home</Link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Home Loan
+              </li>
+            </ol>
+          </nav>
+          <h1>{result.pagedata.bankhomehead}</h1>
           <div className="row">
             <div className="col-md-6">
-              <div className="card">
+              <div className={`${styles.bannerLeft} card`}>
                 <figure>
                   <Image
                     src={result.pagedata.loanbanner}
                     alt={result.pagedata.loanbannerheading}
                     width={600}
                     height={400}
-                    className="img-fluid rounded-top"
+                    className={styles.banner}
                   />
                 </figure>
                 <div className="py-3 px-4">
@@ -67,25 +80,22 @@ export default async function HomeLoan() {
         <section className="container-xl pt-lg-5 pt-3">
           <div className="row">
             <div className="col-md-7 col-lg-8">
-              <h1 dangerouslySetInnerHTML={{ __html: result.pagedata.bankhomehead }} />
+              <h2 className="mb-1">Plan Your Dream Home with EMI Calculator</h2>
               <p>{result.pagedata.bankhomedesc}</p>
               <div className={styles.banks}>
-                {banksData.map(bank => (
-                  <figure key={bank.id}>
-                    <Image
-                      src={bank.devphoto}
-                      alt={bank.name}
-                      className="img-fluid"
-                      width={160}
-                      height={70}
-                    />
-                    <figcaption>{bank.name}</figcaption>
-                  </figure>
-                ))}
+                <BankSliders
+                  className={styles.banksSlider}
+                  banksData={banksData}
+                />
               </div>
 
               <h2>{result.pagedata.banklistinghead}</h2>
-              <div dangerouslySetInnerHTML={{ __html: result.pagedata.banklistingdesc }} />              
+              <div
+                className={styles.bankContent}
+                dangerouslySetInnerHTML={{
+                  __html: result.pagedata.banklistingdesc,
+                }}
+              />
               <div className="h4 mt-4">Frequently Asked Questions</div>
               <BsAccordion itemData={faqsData} />
             </div>
@@ -113,7 +123,7 @@ export default async function HomeLoan() {
         residentialData={residentialData}
         pageName={pageName}
         projectName={projectName}
-        ctoc={ctoc} 
+        ctoc={ctoc}
         whatsApp={whatsApp}
       />
     </>
